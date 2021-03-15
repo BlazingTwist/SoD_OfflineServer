@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="Status">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Success"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Failure"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PoolItemsNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidItemMap"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotFiltered"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidInput"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidGameMetaData"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="9">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidItemRarity"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="10">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemStatsPersistFailed"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="11">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidItemPayout"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="12">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidStatsMap"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="13">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidPossibleStatsMap"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="14">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemStatsNotExist"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="15">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemsNotMapped"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="16">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="EventDataNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="17">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="MissionDataNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="18">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="SeasonRewardsNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="19">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotFoundInInventory"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="20">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="BluePrintItemNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="21">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="LowDeductibleItemQuantity"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="22">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="InvalidBlueprintIngredients"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

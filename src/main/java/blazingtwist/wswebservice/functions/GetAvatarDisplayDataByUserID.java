@@ -41,9 +41,9 @@ public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
 		textureList.getTexture().add("DWAvatarWristbandFLGroncicle01.unity3d/DWAvWristbandFGroncicleTex");
 		textureList.getTexture().add("DWAvatarWristbandFLGroncicle01.unity3d/DWAvWristbandFGroncicleTex");
 
-		avatarDataPart.setUiid(740462370);
+		avatarDataPart.setUserInventoryID(740462370);
 		avatarData.getPart().add(avatarDataPart);
-		avatarData.setUTD(null);
+		avatarData.setUserNameToDisplayName(null);
 		avatarData.setIsSuggestedAvatarName(null);
 
 		AvatarDisplayData avatarDisplayData = new AvatarDisplayData();

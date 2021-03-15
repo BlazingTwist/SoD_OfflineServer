@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="PairData.xsd"/>
+
+    <complexType name="CommonInventoryRequest">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="uipid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userItemPositionID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="u" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="uses"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="uia" type="sod:PairData">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userItemAttributes"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="im" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="inventoryMax"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="iid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="cid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="commonInventoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="q" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="quantity"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

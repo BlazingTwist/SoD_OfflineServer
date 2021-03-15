@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <complexType name="UserGameCurrency">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userGameCurrencyID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="uid" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userID"/>
+                    </appinfo>
+                    <documentation>Client parses this as a System.Guid</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="gc" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="gameCurrency"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="cc" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="cashCurrency"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

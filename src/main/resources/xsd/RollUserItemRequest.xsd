@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="CommonInventoryRequest.xsd"/>
+
+    <complexType name="RollUserItemRequest">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="CID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="containerID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="UIID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userInventoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="ISN" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemStatNames"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="CIR" type="sod:CommonInventoryRequest">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="inventoryItems"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>
