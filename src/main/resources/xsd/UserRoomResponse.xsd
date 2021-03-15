@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <xsd:include schemaLocation="UserRoom.xsd"/>
+
+    <complexType name="UserRoomResponse">
+        <sequence>
+            <element maxOccurs="unbounded" minOccurs="1" name="ur" type="sod:UserRoom"/>
+        </sequence>
+    </complexType>
+</schema>

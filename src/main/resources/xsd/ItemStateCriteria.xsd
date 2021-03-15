@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="ItemStateCriteriaType.xsd"/>
+    <include schemaLocation="ReplenishableRate.xsd"/>
+
+    <complexType name="ItemStateCriteria">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="Type" type="sod:ItemStateCriteriaType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="ItemStateCriteriaLength">
+        <complexContent>
+            <extension base="sod:ItemStateCriteria">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1" name="Period" type="xsd:int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ItemStateCriteriaConsumable">
+        <complexContent>
+            <extension base="sod:ItemStateCriteria">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1" name="ItemID" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="ConsumeUses" type="xsd:boolean"/>
+                    <element maxOccurs="1" minOccurs="1" name="Amount" type="xsd:int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ItemStateCriteriaReplenishable">
+        <complexContent>
+            <extension base="sod:ItemStateCriteria">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1" name="ApplyRank" type="xsd:boolean"/>
+                    <element maxOccurs="1" minOccurs="0" name="PointTypeID" type="xsd:int"/>
+                    <element maxOccurs="unbounded" minOccurs="1" name="ReplenishableRates" type="sod:ReplenishableRate"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ItemStateCriteriaOverride">
+        <complexContent>
+            <extension base="sod:ItemStateCriteria">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1" name="ItemID" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="ConsumeUses" type="xsd:boolean"/>
+                    <element maxOccurs="1" minOccurs="1" name="Amount" type="xsd:int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ItemStateCriteriaSpeedUpItem">
+        <complexContent>
+            <extension base="sod:ItemStateCriteria">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1" name="ItemID" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="ConsumeUses" type="xsd:boolean"/>
+                    <element maxOccurs="1" minOccurs="1" name="Amount" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="ChangeState" type="xsd:boolean"/>
+                    <element maxOccurs="1" minOccurs="1" name="EndStateID" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="SpeedUpCapacity" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="SpeedUpUses" type="xsd:boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="ItemStateCriteriaExpiry">
+        <complexContent>
+            <extension base="sod:ItemStateCriteria">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="1" name="Period" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="1" name="EndStateID" type="xsd:int"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

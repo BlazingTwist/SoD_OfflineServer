@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="ItemStateRule.xsd"/>
+    <include schemaLocation="AchievementReward.xsd"/>
+
+    <complexType name="ItemState">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="ItemStateID" type="xsd:int"/>
+            <element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="1" name="Rule" type="sod:ItemStateRule"/>
+            <element maxOccurs="1" minOccurs="1" name="Order" type="xsd:int"/>
+            <element maxOccurs="1" minOccurs="0" name="AchievementID" type="xsd:int"/>
+            <element maxOccurs="unbounded" minOccurs="1" name="Rewards" type="sod:AchievementReward"/>
+        </sequence>
+    </complexType>
+</schema>

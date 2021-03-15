@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="UserItemData.xsd"/>
+
+    <complexType name="AchievementReward">
+        <sequence>
+            <element maxOccurs="1" minOccurs="0" name="ui" type="sod:UserItemData">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userItem"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="a" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="amount"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="p" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="pointTypeID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="ii" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="i" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="entityID"/>
+                    </appinfo>
+                    <documentation>Client parses this as a System.Guid</documentation>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="t" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="entityTypeID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="r" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="rewardID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="ai" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="achievementID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="amulti" type="xsd:boolean">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="allowMultiple"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="mina" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="minAmount"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="maxa" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="maxAmount"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="d" type="xsd:dateTime">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="date"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="cid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="commonInventoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

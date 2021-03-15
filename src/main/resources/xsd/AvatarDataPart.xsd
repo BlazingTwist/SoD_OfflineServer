@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         elementFormDefault="unqualified" version="4.1.0"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
@@ -37,7 +38,13 @@
             <element maxOccurs="1" minOccurs="1" name="Geometries" type="sod:AvatarDataPartGeometryList"/>
             <element maxOccurs="1" minOccurs="1" name="Textures" type="sod:AvatarDataPartTextureList"/>
             <element maxOccurs="1" minOccurs="1" name="Attributes" type="sod:AvatarPartAttributeList"/>
-            <element maxOccurs="1" minOccurs="0" name="Uiid" type="xsd:int"/>
+            <element maxOccurs="1" minOccurs="0" name="Uiid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userInventoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
         </sequence>
     </xsd:complexType>
 </schema>

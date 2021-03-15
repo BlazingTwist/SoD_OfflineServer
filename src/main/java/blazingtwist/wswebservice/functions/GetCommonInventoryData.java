@@ -5,14 +5,18 @@ import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
 import java.util.Map;
 
-public class GetAvatarData extends WebServiceFunction {
+public class GetCommonInventoryData extends WebServiceFunction {
 	@WebServiceFunctionConstructor
-	public GetAvatarData(String contextName) {
+	public GetCommonInventoryData(String contextName) {
 		super(contextName);
 	}
 
 	@Override
 	public void handle(HttpExchange exchange, Map<String, String> params) {
+		// two different calls
+		// * apiToken | apiKey | ContainerId
+		// * apiToken | apiKey | getCommonInventoryRequestXml
+
 		// TODO
 	}
 }

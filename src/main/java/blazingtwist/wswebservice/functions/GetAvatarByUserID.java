@@ -1,14 +1,14 @@
 package blazingtwist.wswebservice.functions;
 
-import blazingtwist.config.JsonDefaultConstructor;
 import blazingtwist.wswebservice.WebServiceFunction;
+import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
 import java.util.Map;
 
 public class GetAvatarByUserID extends WebServiceFunction {
-	@JsonDefaultConstructor
-	public GetAvatarByUserID() {
-		super(GetAvatarByUserID.class.getSimpleName());
+	@WebServiceFunctionConstructor
+	public GetAvatarByUserID(String contextName) {
+		super(contextName);
 	}
 
 	@Override

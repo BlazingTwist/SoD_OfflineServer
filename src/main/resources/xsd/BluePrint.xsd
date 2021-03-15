@@ -4,26 +4,29 @@
         elementFormDefault="unqualified" version="4.1.0"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <complexType name="RewardMultiplier">
+    <include schemaLocation="BluePrintDeductibleConfig.xsd"/>
+    <include schemaLocation="BluePrintSpecification.xsd"/>
+
+    <complexType name="BluePrint">
         <sequence>
-            <element maxOccurs="1" minOccurs="1" name="PT" type="xsd:int">
+            <element maxOccurs="unbounded" minOccurs="0" name="BPDC" type="sod:BluePrintDeductibleConfig">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="pointTypeID"/>
+                        <jaxb:property name="deductibles"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="MF" type="xsd:int">
+            <element maxOccurs="unbounded" minOccurs="1" name="ING" type="sod:BluePrintSpecification">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="multiplierFactor"/>
+                        <jaxb:property name="ingredients"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="MET" type="xsd:dateTime">
+            <element maxOccurs="unbounded" minOccurs="1" name="OUT" type="sod:BluePrintSpecification">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="multiplierEffectTime"/>
+                        <jaxb:property name="outputs"/>
                     </appinfo>
                 </annotation>
             </element>

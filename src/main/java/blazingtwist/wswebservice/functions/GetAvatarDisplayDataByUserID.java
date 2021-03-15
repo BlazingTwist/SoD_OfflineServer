@@ -1,6 +1,5 @@
 package blazingtwist.wswebservice.functions;
 
-import blazingtwist.config.JsonDefaultConstructor;
 import blazingtwist.sod.AvatarData;
 import blazingtwist.sod.AvatarDataPart;
 import blazingtwist.sod.AvatarDataPartGeometryList;
@@ -8,6 +7,7 @@ import blazingtwist.sod.AvatarDataPartTextureList;
 import blazingtwist.sod.AvatarDisplayData;
 import blazingtwist.sod.Gender;
 import blazingtwist.wswebservice.WebServiceFunction;
+import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
 import java.io.StringWriter;
 import java.util.Map;
@@ -18,9 +18,9 @@ import javax.xml.bind.Marshaller;
 import javax.xml.namespace.QName;
 
 public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
-	@JsonDefaultConstructor
-	public GetAvatarDisplayDataByUserID() {
-		super(GetAvatarDisplayDataByUserID.class.getSimpleName());
+	@WebServiceFunctionConstructor
+	public GetAvatarDisplayDataByUserID(String contextName) {
+		super(contextName);
 	}
 
 	private JAXBElement<AvatarDisplayData> buildResponse(){

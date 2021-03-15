@@ -4,16 +4,16 @@
         elementFormDefault="unqualified" version="4.1.0"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <complexType name="AvatarPartAttribute">
+    <complexType name="ItemAttribute">
         <sequence>
-            <element maxOccurs="1" minOccurs="1" name="K" type="xsd:string">
+            <element maxOccurs="1" minOccurs="1" name="k" type="xsd:string">
                 <annotation>
                     <appinfo>
                         <jaxb:property name="key"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="V" type="xsd:string">
+            <element maxOccurs="1" minOccurs="1" name="v" type="xsd:string">
                 <annotation>
                     <appinfo>
                         <jaxb:property name="value"/>

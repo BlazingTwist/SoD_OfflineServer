@@ -5,9 +5,9 @@ import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
 import java.util.Map;
 
-public class GetAvatarData extends WebServiceFunction {
+public class GetDefaultNameSuggestion extends WebServiceFunction {
 	@WebServiceFunctionConstructor
-	public GetAvatarData(String contextName) {
+	public GetDefaultNameSuggestion(String contextName) {
 		super(contextName);
 	}
 

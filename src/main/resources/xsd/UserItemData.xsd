@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="PairData.xsd"/>
+    <include schemaLocation="ItemStat.xsd"/>
+    <include schemaLocation="ItemTier.xsd"/>
+    <include schemaLocation="ItemData.xsd"/>
+
+    <complexType name="UserItemData">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="iid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="md" type="xsd:dateTime">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="modifiedDate"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="uia" type="sod:PairData">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userItemAttributes"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="iss" type="sod:ItemStat">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemStats"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="IT" type="sod:ItemTier">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemTier"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="uiid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userInventoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="q" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="quantity"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="u" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="uses"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="i" type="sod:ItemData">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="item"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

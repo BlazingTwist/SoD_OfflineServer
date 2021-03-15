@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="ItemState.xsd"/>
+    <include schemaLocation="ItemRarity.xsd"/>
+    <include schemaLocation="ItemPossibleStatsMap.xsd"/>
+    <include schemaLocation="ItemStatsMap.xsd"/>
+    <include schemaLocation="ItemSaleConfig.xsd"/>
+    <include schemaLocation="BluePrint.xsd"/>
+    <include schemaLocation="ItemAttribute.xsd"/>
+    <include schemaLocation="ItemDataCategory.xsd"/>
+    <include schemaLocation="ItemDataRollover.xsd"/>
+    <include schemaLocation="ItemDataRelationship.xsd"/>
+    <include schemaLocation="ItemDataTexture.xsd"/>
+    <include schemaLocation="ItemAvailability.xsd"/>
+
+    <complexType name="ItemData">
+        <sequence>
+            <element maxOccurs="unbounded" minOccurs="1" name="is" type="sod:ItemState">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemStates"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="ir" type="sod:ItemRarity">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemRarity"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="ipsm" type="sod:ItemPossibleStatsMap">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="possibleStatsMap"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="ism" type="sod:ItemStatsMap">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemStatsMap"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="iscs" type="sod:ItemSaleConfig">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemSaleConfigs"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="bp" type="sod:BluePrint">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="bluePrint"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="an" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="assetName"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="at" type="sod:ItemAttribute">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="attribute"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="c" type="sod:ItemDataCategory">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="category"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="ct" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="cost"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="ct2" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="cashCost"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="cp" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="creativePoints"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="d" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="description"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="icn" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="iconName"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="im" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="inventoryMax"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="itn" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemName"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="itnp" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="itemNamePlural"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="l" type="xsd:boolean">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="locked"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="g" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="geometry2"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="ro" type="sod:ItemDataRollover">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="rollover"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="rid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="rankID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="r" type="sod:ItemDataRelationship">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="relationship"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="s" type="xsd:boolean">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="stackable"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="as" type="xsd:boolean">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="allowStacking"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="sf" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="saleFactor"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="t" type="sod:ItemDataTexture">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="texture"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="u" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="uses"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="1" name="av" type="sod:ItemAvailability">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="availability"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="rtid" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="rewardTypeID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="p" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="points"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

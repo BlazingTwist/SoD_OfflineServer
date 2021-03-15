@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         elementFormDefault="unqualified" version="4.1.0"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
@@ -13,7 +14,13 @@
             <element maxOccurs="1" minOccurs="0" name="DisplayName" type="xsd:string"/>
             <element maxOccurs="unbounded" minOccurs="1" name="Part" type="sod:AvatarDataPart"/>
             <element maxOccurs="1" minOccurs="1" name="Gender" type="sod:Gender"/>
-            <element maxOccurs="1" minOccurs="0" name="UTD" type="xsd:boolean"/>
+            <element maxOccurs="1" minOccurs="0" name="UTD" type="xsd:boolean">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="userNameToDisplayName"/>
+                    </appinfo>
+                </annotation>
+            </element>
         </sequence>
     </complexType>
 </schema>

@@ -18,7 +18,7 @@ public class Main {
 		return webHandler;
 	}
 
-	private static Set<Class<? extends WebServiceFunction>> findWebFunctions(){
+	private static Set<Class<? extends WebServiceFunction>> findWebFunctions() {
 		Reflections reflections = new Reflections("blazingtwist.wswebservice.functions");
 		return reflections.getSubTypesOf(WebServiceFunction.class);
 	}
@@ -42,7 +42,7 @@ public class Main {
 			}
 
 			try {
-				webFunctions.add(webFunctionType.getDeclaredConstructor().newInstance());
+				webFunctions.add(webFunctionType.getDeclaredConstructor(String.class).newInstance(functionConfig.getContextName()));
 			} catch (InstantiationException | IllegalAccessException | InvocationTargetException | NoSuchMethodException e) {
 				System.err.println("Unable to load WebFunction: " + webFunctionType.getSimpleName());
 				e.printStackTrace();
