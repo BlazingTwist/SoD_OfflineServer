@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <xsd:include schemaLocation="AvatarValidationResult.xsd"/>
+    <xsd:include schemaLocation="SuggestionResult.xsd"/>
+
+    <complexType name="SetAvatarResult">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
+            <element maxOccurs="1" minOccurs="1" name="StatusCode" type="sod:AvatarValidationResult"/>
+            <element maxOccurs="1" minOccurs="0" name="DisplayName" type="xsd:string"/>
+            <element maxOccurs="1" minOccurs="0" name="Suggestions" type="sod:SuggestionResult"/>
+        </sequence>
+    </complexType>
+</schema>

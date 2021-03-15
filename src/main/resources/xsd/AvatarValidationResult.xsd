@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <xsd:include schemaLocation="AvatarValidationResult.xsd"/>
+
+    <simpleType name="AvatarValidationResult">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Valid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PartInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PartTypeDuplicate"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PartTypeEmpty"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PartTypeLengthInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="TexturesInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GeometriesInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="OffsetsInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="9">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="OffsetsNotFloat"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="10">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="AvatarDisplayNameInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="255">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Error"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

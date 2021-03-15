@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+        elementFormDefault="unqualified" version="4.1.0"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <xsd:include schemaLocation="AvatarData.xsd"/>
+    <xsd:include schemaLocation="UserInfo.xsd"/>
+    <xsd:include schemaLocation="UserSubscriptionInfo.xsd"/>
+    <xsd:include schemaLocation="UserAchievementInfo.xsd"/>
+    <xsd:include schemaLocation="RewardMultiplier.xsd"/>
+
+    <complexType name="AvatarDisplayData">
+        <sequence>
+            <element maxOccurs="1" minOccurs="0" name="AvatarData" type="sod:AvatarData"/>
+            <element maxOccurs="1" minOccurs="1" name="UserInfo" type="sod:UserInfo"/>
+            <element maxOccurs="1" minOccurs="1" name="UserSubscriptionInfo" type="sod:UserSubscriptionInfo"/>
+            <element maxOccurs="1" minOccurs="1" name="AchievementInfo" type="sod:UserAchievementInfo"/>
+            <element maxOccurs="unbounded" minOccurs="1" name="Achievements" type="sod:UserAchievementInfo"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="RewardMultipliers" type="sod:RewardMultiplier"/>
+            <element maxOccurs="1" minOccurs="1" name="RankID" type="xsd:int"/>
+        </sequence>
+    </complexType>
+</schema>
