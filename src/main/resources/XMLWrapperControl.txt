@@ -1,0 +1,5 @@
+# Exclude all files by default.
+/.*/=exclude
+
+/blazingtwist\.sod\.AvatarDataPart\..*/=include
+/blazingtwist\.sod\.ProductData\..*/=include

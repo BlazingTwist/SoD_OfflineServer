@@ -2,8 +2,6 @@ package blazingtwist.wswebservice.functions;
 
 import blazingtwist.sod.AvatarData;
 import blazingtwist.sod.AvatarDataPart;
-import blazingtwist.sod.AvatarDataPartGeometryList;
-import blazingtwist.sod.AvatarDataPartTextureList;
 import blazingtwist.sod.AvatarDisplayData;
 import blazingtwist.sod.Gender;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -31,15 +29,11 @@ public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
 		AvatarDataPart avatarDataPart = new AvatarDataPart();
 		avatarDataPart.setPartType("WristBand");
 
-		AvatarDataPartGeometryList geometryList = new AvatarDataPartGeometryList();
-		avatarDataPart.setGeometries(geometryList);
-		geometryList.getGeometry().add("PfDWAvWristbandFLGroncicle.unity3d/PfDWAvWristbandFLGroncicle");
-		geometryList.getGeometry().add("PfDWAvWristbandFRGroncicle.unity3d/PfDWAvWristbandFRGroncicle");
+		avatarDataPart.getGeometries().add("PfDWAvWristbandFLGroncicle.unity3d/PfDWAvWristbandFLGroncicle");
+		avatarDataPart.getGeometries().add("PfDWAvWristbandFRGroncicle.unity3d/PfDWAvWristbandFRGroncicle");
 
-		AvatarDataPartTextureList textureList = new AvatarDataPartTextureList();
-		avatarDataPart.setTextures(textureList);
-		textureList.getTexture().add("DWAvatarWristbandFLGroncicle01.unity3d/DWAvWristbandFGroncicleTex");
-		textureList.getTexture().add("DWAvatarWristbandFLGroncicle01.unity3d/DWAvWristbandFGroncicleTex");
+		avatarDataPart.getTextures().add("DWAvatarWristbandFLGroncicle01.unity3d/DWAvWristbandFGroncicleTex");
+		avatarDataPart.getTextures().add("DWAvatarWristbandFLGroncicle01.unity3d/DWAvWristbandFGroncicleTex");
 
 		avatarDataPart.setUserInventoryID(740462370);
 		avatarData.getPart().add(avatarDataPart);

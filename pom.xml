@@ -32,6 +32,10 @@
                     <extension>true</extension>
                     <enableIntrospection>true</enableIntrospection>
                     <args>
+                        <arg>-Xxew</arg>
+                        <arg>-Xxew:control ${project.basedir}/src/main/resources/XMLWrapperControl.txt</arg>
+                        <arg>-Xxew:instantiate lazy</arg>
+
                         <arg>-XtoString</arg>
                         <arg>-Xequals</arg>
                         <arg>-XhashCode</arg>
@@ -46,6 +50,11 @@
                             <groupId>org.jvnet.jaxb2_commons</groupId>
                             <artifactId>jaxb2-basics</artifactId>
                             <version>0.10.0</version>
+                        </plugin>
+                        <plugin>
+                            <groupId>com.github.jaxb-xew-plugin</groupId>
+                            <artifactId>jaxb-xew-plugin</artifactId>
+                            <version>1.11</version>
                         </plugin>
                     </plugins>
                 </configuration>
