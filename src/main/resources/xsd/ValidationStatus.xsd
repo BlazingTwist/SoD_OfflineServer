@@ -3,89 +3,101 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <xsd:include schemaLocation="AvatarValidationResult.xsd"/>
-
-    <simpleType name="AvatarValidationResult">
+    <simpleType name="ValidationStatus">
         <annotation>
             <appinfo>
                 <jaxb:typesafeEnumClass/>
             </appinfo>
         </annotation>
         <restriction base="xsd:int">
+            <enumeration value="0">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Success"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
             <enumeration value="1">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="Valid"/>
+                        <jaxb:typesafeEnumMember name="InputValidationError"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="2">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="PartInvalid"/>
+                        <jaxb:typesafeEnumMember name="InputDeserializeError"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="3">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="PartTypeDuplicate"/>
+                        <jaxb:typesafeEnumMember name="InvalidToken"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="4">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="PartTypeEmpty"/>
+                        <jaxb:typesafeEnumMember name="NoItemFound"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="5">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="PartTypeLengthInvalid"/>
+                        <jaxb:typesafeEnumMember name="InvalidQuantity"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="6">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="TexturesInvalid"/>
+                        <jaxb:typesafeEnumMember name="InvalidConfiguration"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="7">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="GeometriesInvalid"/>
+                        <jaxb:typesafeEnumMember name="AuthenticationFailed"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="8">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="OffsetsInvalid"/>
+                        <jaxb:typesafeEnumMember name="PrizeItemsNotFound"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="9">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="OffsetsNotFloat"/>
+                        <jaxb:typesafeEnumMember name="ExceededMaxRedeemCount"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="10">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="AvatarDisplayNameInvalid"/>
+                        <jaxb:typesafeEnumMember name="CollectableQuantityNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="11">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="MaxRedeemCountNotConfigured"/>
                     </appinfo>
                 </annotation>
             </enumeration>
             <enumeration value="255">
                 <annotation>
                     <appinfo>
-                        <jaxb:typesafeEnumMember name="Error"/>
+                        <jaxb:typesafeEnumMember name="UnknownError"/>
                     </appinfo>
                 </annotation>
             </enumeration>

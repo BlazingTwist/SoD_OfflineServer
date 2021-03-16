@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        elementFormDefault="unqualified" version="4.1.0"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
     <include schemaLocation="ItemStateRule.xsd"/>

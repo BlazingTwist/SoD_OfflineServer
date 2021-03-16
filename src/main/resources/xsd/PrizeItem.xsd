@@ -3,29 +3,28 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <include schemaLocation="ItemTier.xsd"/>
-    <include schemaLocation="ItemStat.xsd"/>
+    <include schemaLocation="ItemData.xsd"/>
 
-    <complexType name="ItemStatsMap">
+    <complexType name="PrizeItem">
         <sequence>
-            <element maxOccurs="1" minOccurs="1" name="IID" type="xsd:int">
+            <element maxOccurs="1" minOccurs="1" name="pi" type="sod:ItemData">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="itemID"/>
+                        <jaxb:property name="item"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="IT" type="sod:ItemTier">
+            <element maxOccurs="1" minOccurs="1" name="iq" type="xsd:int">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="itemTier"/>
+                        <jaxb:property name="itemQuantity"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="unbounded" minOccurs="1" name="ISS" type="sod:ItemStat">
+            <element maxOccurs="1" minOccurs="1" name="cid" type="xsd:int">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="itemStats"/>
+                        <jaxb:property name="commonInventoryID"/>
                     </appinfo>
                 </annotation>
             </element>
