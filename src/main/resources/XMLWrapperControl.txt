@@ -3,3 +3,4 @@
 
 /blazingtwist\.sod\.AvatarDataPart\..*/=include
 /blazingtwist\.sod\.ProductData\..*/=include
+/blazingtwist\.sod\.SceneData\..*/=include
