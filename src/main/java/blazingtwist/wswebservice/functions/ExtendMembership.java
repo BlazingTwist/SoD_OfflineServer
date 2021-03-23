@@ -5,9 +5,9 @@ import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
 import java.util.Map;
 
-public class SetProductData extends WebServiceFunction {
+public class ExtendMembership extends WebServiceFunction {
 	@WebServiceFunctionConstructor
-	public SetProductData(String contextName) {
+	public ExtendMembership(String contextName) {
 		super(contextName);
 	}
 
