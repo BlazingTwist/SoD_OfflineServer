@@ -12,3 +12,12 @@
 * CreateAvatarContestEntry
 * GetRankByUserID
 * GetRankByUserIDs
+* GetUserAchievementInfo
+* SetUserAchievement
+* GetTopAchievementPointUsers
+* GetTopAchievementPointBuddies
+* GetTopAchievementPointUsersByType
+* GetTopAchievementPointBuddiesByType
+* GetAchievementRewardsByAchievementTaskID
+* SendMessage
+* QueueMessage
