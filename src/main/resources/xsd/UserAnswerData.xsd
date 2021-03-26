@@ -3,25 +3,18 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <include schemaLocation="UserItemData.xsd"/>
+    <include schemaLocation="ProfileUserAnswer.xsd"/>
 
-    <complexType name="CommonInventoryData">
+    <complexType name="UserAnswerData">
         <sequence>
-            <element maxOccurs="1" minOccurs="1" name="uid" type="xsd:string">
+            <element maxOccurs="1" minOccurs="1" name="ID" type="xsd:string">
                 <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
                     <appinfo>
                         <jaxb:property name="userID"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="unbounded" minOccurs="1" name="i" type="sod:UserItemData">
-                <annotation>
-                    <appinfo>
-                        <jaxb:property name="item"/>
-                    </appinfo>
-                </annotation>
-            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="Answers" type="sod:ProfileUserAnswer"/>
         </sequence>
     </complexType>
 </schema>

@@ -3,9 +3,9 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <complexType name="UserAchievementInfo">
+    <complexType name="UserGrade">
         <sequence>
-            <element maxOccurs="1" minOccurs="1" name="u" type="xsd:string">
+            <element maxOccurs="1" minOccurs="0" name="UId" type="xsd:string">
                 <annotation>
                     <documentation>Client parses this as a System.Guid</documentation>
                     <appinfo>
@@ -13,31 +13,24 @@
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="n" type="xsd:string">
+            <element maxOccurs="1" minOccurs="1" name="UGID" type="xsd:int">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="userName"/>
+                        <jaxb:property name="userGradeID"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="a" type="xsd:int">
+            <element maxOccurs="1" minOccurs="1" name="UGN" type="xsd:string">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="achievementPointTotal"/>
+                        <jaxb:property name="userGradeName"/>
                     </appinfo>
                 </annotation>
             </element>
-            <element maxOccurs="1" minOccurs="1" name="r" type="xsd:int">
+            <element maxOccurs="1" minOccurs="0" name="UGL" type="xsd:boolean">
                 <annotation>
                     <appinfo>
-                        <jaxb:property name="rankID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="p" type="xsd:int">
-                <annotation>
-                    <appinfo>
-                        <jaxb:property name="pointTypeID"/>
+                        <jaxb:property name="locked"/>
                     </appinfo>
                 </annotation>
             </element>

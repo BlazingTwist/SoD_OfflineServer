@@ -6,4 +6,9 @@
 * GetImageByProductGroup
 * SetImagesData
 * GetChildList
-* 
+* GetConfigurationSetting
+* GetContentByType
+* GetValidatedUserID
+* CreateAvatarContestEntry
+* GetRankByUserID
+* GetRankByUserIDs
