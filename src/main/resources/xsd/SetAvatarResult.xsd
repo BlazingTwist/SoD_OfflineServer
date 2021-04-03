@@ -3,15 +3,15 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
         xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
 
-    <xsd:include schemaLocation="AvatarValidationResult.xsd"/>
-    <xsd:include schemaLocation="SuggestionResult.xsd"/>
+    <include schemaLocation="AvatarValidationResult.xsd"/>
+    <include schemaLocation="SuggestionResult.xsd"/>
 
     <complexType name="SetAvatarResult">
         <sequence>
             <element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
             <element maxOccurs="1" minOccurs="1" name="StatusCode" type="sod:AvatarValidationResult"/>
-            <element maxOccurs="1" minOccurs="0" name="DisplayName" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="0" name="Suggestions" type="sod:SuggestionResult"/>
+            <element maxOccurs="1" minOccurs="1" name="DisplayName" type="xsd:boolean"/>
+            <element maxOccurs="1" minOccurs="1" name="Suggestions" type="sod:SuggestionResult"/>
         </sequence>
     </complexType>
 </schema>

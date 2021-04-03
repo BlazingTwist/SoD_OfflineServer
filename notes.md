@@ -21,3 +21,19 @@
 * GetAchievementRewardsByAchievementTaskID
 * SendMessage
 * QueueMessage
+* PostNewMessageToList
+* GetItemsInStoreData
+* IsValidToken
+* GetXsollaToken
+* CreatePurchaseOrderRequest
+* SetHighScore
+* GetDisplayNames
+* GetDisplayNamesByCategory
+* GetGameCurrency
+* GetGameCurrencyByUserID
+* CollectUserBonus
+* GetItems
+
+### Used but planned to remove:
+* ProcessSteam
+* RedeemReceipt
