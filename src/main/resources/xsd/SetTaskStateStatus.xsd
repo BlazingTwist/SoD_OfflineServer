@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="SetTaskStateStatus">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="RequiresMembership"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="RequiresAcceptance"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="NotWithinDateRange"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PreRequisiteMissionIncomplete"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UserRankLessThanMinRank"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UserRankGreaterThanMaxRank"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UserHasNoRankData"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="MissionStateNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="9">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="RequiredPriorTaskIncomplete"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="10">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ParentsTaskIncomplete"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="11">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ParentsSubMissionIncomplete"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="12">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="TaskCanBeDone"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="13">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="OneOrMoreMissionsHaveNoRewardsAttached"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="14">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PayLoadUpdated"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="255">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Unknown"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

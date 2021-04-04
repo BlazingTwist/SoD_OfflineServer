@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="DataType">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="BOOL"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="BYTE"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="CHAR"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="DECIMAL"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="DOUBLE"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="FLOAT"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="INT"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="LONG"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="9">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="SBYTE"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="10">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="SHORT"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="11">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="STRING"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="12">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UINT"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="13">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ULONG"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="14">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="USHORT"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

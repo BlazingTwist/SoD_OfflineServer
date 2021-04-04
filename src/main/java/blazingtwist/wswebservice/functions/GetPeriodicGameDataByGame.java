@@ -5,18 +5,14 @@ import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
 import java.util.Map;
 
-public class GetUserMissionState extends WebServiceFunction {
+public class GetPeriodicGameDataByGame extends WebServiceFunction {
 	@WebServiceFunctionConstructor
-	public GetUserMissionState(String contextName) {
+	public GetPeriodicGameDataByGame(String contextName) {
 		super(contextName);
 	}
 
 	@Override
 	public void handle(HttpExchange exchange, Map<String, String> params) {
-		// two different calls
-		// * string (userId) | MissionRequestFilter (filter)
-		// * string (userId) | MissionRequestFilterV2 (filter)
-
 		// TODO
 	}
 }

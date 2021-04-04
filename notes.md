@@ -33,7 +33,38 @@
 * GetGameCurrencyByUserID
 * CollectUserBonus
 * GetItems
+* GetGameDataByGameForDayRange
+* GetCumulativePeriodicGameDataByUsers
+* DeleteKeyValuePairByKeys
+* GetAssetVersion
+* GetAllPlatformAssetVersions
+* GetAssetVersions
+* GetAllAssetVersionsByUser
+* GetNickname
+* AddOneWayBuddy
+* GetNeighborsByUserID
+* SetNeighbor
+* GetPartyByUserID
+* GetPartiesByUserID
+* GetActiveParties
+* PurchaseParty
+* GetUserTimedItems
+* SetUserTimedItem
+* GetUserStaff
+* SetUserStaff
+* GetStreamPost
+* StreamPostLog
+* GetActiveRaisedPetsByTypes
+* GetSelectedRaisedPetByType
+* GetUnselectedPetsByTypes
+* CreateRaisedPet
+* SubmitRating
+* GetAllRatings
+* ClearRating
+* GetTopRank
+* GetRank
 
 ### Used but planned to remove:
 * ProcessSteam
 * RedeemReceipt
+* SetRaisedPetInactive (TODO: still called from console)

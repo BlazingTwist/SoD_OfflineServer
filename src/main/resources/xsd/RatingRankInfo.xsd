@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <complexType name="RatingRankInfo">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="ID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="RatingRankID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="CID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="RatingCategoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="EID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="RatedEntityID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="R" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Rank"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="RA" type="xsd:float">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="RatingAverage"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="TV" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="TotalVotes"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="UD" type="xsd:dateTime">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="UpdateDate"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

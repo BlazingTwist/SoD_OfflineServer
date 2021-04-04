@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="RaisedPetSetResult.xsd"/>
+    <include schemaLocation="CommonInventoryResponse.xsd"/>
+
+    <complexType name="SetRaisedPetResponse">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="ErrorMessage" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="ErrorMessage"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="RaisedPetSetResult" type="sod:RaisedPetSetResult">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="RaisedPetSetResult"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="cir" type="sod:CommonInventoryResponse">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="UserCommonInventoryResponse"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>
