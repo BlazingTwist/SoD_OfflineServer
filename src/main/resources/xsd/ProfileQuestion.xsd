@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="ProfileAnswer.xsd"/>
+
+    <complexType name="ProfileQuestion">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="CID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="CategoryID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="Img" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="ImageURL"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="A" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="IsActive"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="L" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Locale"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="Ord" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Ordinal"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="ID" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="ID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="T" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="DisplayText"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="Answers" type="sod:ProfileAnswer">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Answers"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

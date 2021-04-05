@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="DeleteProfileStatus">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:string">
+            <enumeration value="SUCCESS"/>
+            <enumeration value="ALREADY_DELETED"/>
+            <enumeration value="NOT_A_PROFILE_ACCOUNT"/>
+            <enumeration value="OWNER_ID_NOT_FOUND"/>
+            <enumeration value="PROFILE_NOT_OWNED_BY_THIS_OWNER"/>
+            <enumeration value="PROFILE_NOT_FOUND"/>
+            <enumeration value="PROFILE_CANNOT_BE_DELETED"/>
+            <enumeration value="IN_SUFFICIENT_VCASH_FUNDS"/>
+            <enumeration value="ERROR"/>
+        </restriction>
+    </simpleType>
+</schema>

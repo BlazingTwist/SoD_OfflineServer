@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="ItemStateChangeError">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Success"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="CannotOverrideCriteria"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="TimeNotReached"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="CannotFindInventoryItem"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UsesLessThanRequired"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UnableToGetItem"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="QtyLessThanRequired"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemNotInUserInventory"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="9">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="TransitionFailed"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="10">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemStateNotInStateList"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="11">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="OverrideCriteriaNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="12">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="NoCriteriasFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="13">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="AutomaticPurchaseFailed"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="14">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ItemStateExpired"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="255">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Error"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

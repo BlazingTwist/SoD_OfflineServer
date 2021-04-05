@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="MembershipUserStatus">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:string">
+            <enumeration value="Success"/>
+            <enumeration value="InvalidUserName"/>
+            <enumeration value="InvalidPassword"/>
+            <enumeration value="InvalidEmail"/>
+            <enumeration value="DuplicateUserName"/>
+            <enumeration value="DuplicateEmail"/>
+            <enumeration value="InvalidCulture"/>
+            <enumeration value="InvalidDOB"/>
+            <enumeration value="IsDeleted"/>
+            <enumeration value="InvalidApiToken"/>
+            <enumeration value="ValidationError"/>
+            <enumeration value="UserCreationFailed"/>
+            <enumeration value="TokenNotFound"/>
+            <enumeration value="InvalidChildUserName"/>
+            <enumeration value="InvalidChildDOB"/>
+            <enumeration value="InvalidPreRegisteredEmail"/>
+            <enumeration value="InvalidGuestChildUserName"/>
+            <enumeration value="GuestProfileNotFound"/>
+            <enumeration value="GuestAccountNotAnonymous"/>
+            <enumeration value="GuestAccountNotFound"/>
+            <enumeration value="FacebookAccessTokenFailed"/>
+            <enumeration value="DuplicateFacebookUserID"/>
+            <enumeration value="UnmatchedUserNameFacebookUserID"/>
+            <enumeration value="UnlinkedFacebookID"/>
+            <enumeration value="ValidateSignatureFailed"/>
+            <enumeration value="ProductGroupNotFound"/>
+            <enumeration value="DataDeserializationFailed"/>
+            <enumeration value="ChildNotAdded"/>
+            <enumeration value="NoChildData"/>
+            <enumeration value="InvalidSSOUserID"/>
+            <enumeration value="UnlinkedSSOUserID"/>
+            <enumeration value="ExternalCallFailed"/>
+            <enumeration value="IPAddressInvalid"/>
+            <enumeration value="EmailLengthInvalid"/>
+            <enumeration value="EmailBlocked"/>
+            <enumeration value="EmailCannotBeUsed"/>
+            <enumeration value="RegistrationFailedTryAgain"/>
+            <enumeration value="IPAddressBlocked"/>
+            <enumeration value="LoginAttemptsTooMany"/>
+            <enumeration value="UserIsBanned"/>
+            <enumeration value="GenderIsBlank"/>
+            <enumeration value="PasswordRecoveryAttemptsTooMany"/>
+            <enumeration value="UserNameLengthMismatch"/>
+            <enumeration value="UserNameRestriction"/>
+            <enumeration value="UserNameContainsProductName"/>
+            <enumeration value="UserNameContainsBadWord"/>
+            <enumeration value="PasswordLengthMismatch"/>
+            <enumeration value="PasswordContainsInvalidChars"/>
+            <enumeration value="PasswordShouldContainNumbers"/>
+            <enumeration value="PasswordIsOfSameCharacter"/>
+            <enumeration value="PasswordIsNotSecure"/>
+            <enumeration value="PasswordIsSameAsUserName"/>
+            <enumeration value="EmailContainsUserName"/>
+            <enumeration value="EmailDoesNotMatchWithRegisteredEmail"/>
+            <enumeration value="EmailUseExceededLimit"/>
+            <enumeration value="ExternalSystemFailed"/>
+            <enumeration value="FacebookAuthProviderMissing"/>
+            <enumeration value="FaceBookBusinessAPIError"/>
+            <enumeration value="FaceBookInvalidUserIDToken"/>
+            <enumeration value="FaceBookLoginSuccess"/>
+            <enumeration value="FaceBookLoginFailed"/>
+            <enumeration value="FaceBookUserEmpty"/>
+            <enumeration value="FaceBooktokenEmpty"/>
+            <enumeration value="FaceBookLinkExists"/>
+            <enumeration value="FaceBookNoLink"/>
+            <enumeration value="FaceBookUnderAge"/>
+            <enumeration value="FaceBookGraphError"/>
+            <enumeration value="UserNameDoesNotExists"/>
+            <enumeration value="EmailIsEmpty"/>
+            <enumeration value="EmailIsBad"/>
+            <enumeration value="EmailShouldBeInLowerCase"/>
+            <enumeration value="UserPolicyNotAccepted"/>
+            <enumeration value="ProviderError"/>
+        </restriction>
+    </simpleType>
+</schema>

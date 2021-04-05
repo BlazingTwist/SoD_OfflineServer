@@ -63,8 +63,46 @@
 * ClearRating
 * GetTopRank
 * GetRank
+* GetRatingForRatedEntity
+* SubmitScore
+* ClearScore
+* GetTopScore
+* GetTracksByUserID
+* GetTracksByTrackIDs
+* GetTrackElements
+* SetTrack
+* DeleteTrack
+* RemoveUserWithoutTrack
+* SetAchievementTaskByUserID
+* GetLocaleData
+* GetLocaleData
+* GetGamePlayDataForDateRange
+* GetUserAnswers
+* GetConversationByMessageID
+* GetMessageBoard
+* GetStatusConversation
+* AcceptTrade
+* GetGameProgress
+* GetGameProgressByUserID
+* SetGameProgress
+* LogOffParent
+* RegisterAppInstall
+* GetUsersWithPet
+* CheckProductVersion
+* CheckProductVersionV2
+* GetProfileTagAll
+* SendFriendInviteRegister
+* PurchaseGift
+* SetSpeedUpItem
+* GetGroupsByUserID
+* GetGroupsByGroupType
+* ValidatePrizeCode
 
 ### Used but planned to remove:
 * ProcessSteam
 * RedeemReceipt
 * SetRaisedPetInactive (TODO: still called from console)
+* SubmitPrizeCode
+
+### Other
+* RegisterGuest (uses same end-point as RegisterParent)

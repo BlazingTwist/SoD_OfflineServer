@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="GroupType.xsd"/>
+
+    <complexType name="Group">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="G" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="GroupID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="N" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Name"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="D" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Description"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="T" type="sod:GroupType">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Type"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="O" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="OwnerID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="L" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Logo"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="C" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Color"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="M" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="MemberLimit"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="TC" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="TotalMemberCount"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="A" type="xsd:boolean">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Active"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="P" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="ParentGroupID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="PS" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Points"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="RK" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Rank"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="RT" type="xsd:int">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="RankTrend"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

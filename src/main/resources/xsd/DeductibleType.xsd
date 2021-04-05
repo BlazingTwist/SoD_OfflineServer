@@ -11,28 +11,10 @@
                 <jaxb:typesafeEnumClass/>
             </appinfo>
         </annotation>
-        <restriction base="xsd:int">
-            <enumeration value="1">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="Coins"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="2">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="VCash"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="3">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="Item"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
+        <restriction base="xsd:string">
+            <enumeration value="Coins"/>
+            <enumeration value="VCash"/>
+            <enumeration value="Item"/>
         </restriction>
     </simpleType>
 </schema>

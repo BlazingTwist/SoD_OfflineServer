@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="UserLoginInfo.xsd"/>
+    <include schemaLocation="MembershipUserStatus.xsd"/>
+
+    <complexType name="ParentLoginInfo">
+        <complexContent>
+            <extension base="sod:UserLoginInfo">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LoginStatus" type="sod:MembershipUserStatus">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="Status"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ChildList" type="sod:UserLoginInfo">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="ChildList"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="SendActivationReminder" type="xsd:boolean">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="SendActivationReminder"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="UnAuthorized" type="xsd:boolean">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="UnAuthorized"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

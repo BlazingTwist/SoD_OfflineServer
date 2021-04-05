@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="LoginData.xsd"/>
+    <include schemaLocation="ExternalAuthProvider.xsd"/>
+    <include schemaLocation="UserPolicy.xsd"/>
+
+    <complexType name="ParentLoginData">
+        <complexContent>
+            <extension base="sod:LoginData">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ChildUserID" type="xsd:string">
+                        <annotation>
+                            <documentation>Client parses this as a System.Guid</documentation>
+                            <appinfo>
+                                <jaxb:property name="ChildUserID"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="FaceBookUserId" type="xsd:long">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="FaceBookUserId"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="FacebookAccessToken" type="xsd:string">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="FacebookAccessToken"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="LoginDuration" type="xsd:int">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="LoginDuration"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="LoginHash" type="xsd:string">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="LoginHash"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="ClientIP" type="xsd:string">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="ClientIP"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalAuthProvider" type="sod:ExternalAuthProvider">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="ExternalAuthProvider"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalUserID" type="xsd:string">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="ExternalUserID"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalAuthData" type="xsd:string">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="ExternalAuthData"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                    <element maxOccurs="1" minOccurs="0" name="UserPolicy" type="sod:UserPolicy">
+                        <annotation>
+                            <appinfo>
+                                <jaxb:property name="UserPolicy"/>
+                            </appinfo>
+                        </annotation>
+                    </element>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+</schema>

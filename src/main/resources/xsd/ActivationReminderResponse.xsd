@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="ActivationReminderResponse">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ACTIVATION_REMINDER_SENT"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ACCOUNT_ALREADY_ACTIVATED"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ACCOUNT_DELETED"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="NOT_YET_TIME_TO_REMIND"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ACCOUNT_ACTIVATION_DENIED"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="EMAIL_AUTHORIZATION_FAILED"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="EMAIL_NOT_MATCHED"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="SUPER_PARENT_CREATION_FAILED"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="255">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="ERROR"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <include schemaLocation="Status.xsd"/>
+    <include schemaLocation="InventoryItemStatsMap.xsd"/>
+    <include schemaLocation="ValidationMessage.xsd"/>
+
+    <complexType name="FuseItemsResponse">
+        <sequence>
+            <element maxOccurs="1" minOccurs="1" name="ST" type="sod:Status">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Status"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="1" name="UID" type="xsd:string">
+                <annotation>
+                    <documentation>Client parses this as a System.Guid</documentation>
+                    <appinfo>
+                        <jaxb:property name="UserID"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="unbounded" minOccurs="0" name="IISM" type="sod:InventoryItemStatsMap">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="InventoryItemStatsMaps"/>
+                    </appinfo>
+                </annotation>
+            </element>
+            <element maxOccurs="1" minOccurs="0" name="VMSG" type="sod:ValidationMessage">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="ValidationMessage"/>
+                    </appinfo>
+                </annotation>
+            </element>
+        </sequence>
+    </complexType>
+</schema>

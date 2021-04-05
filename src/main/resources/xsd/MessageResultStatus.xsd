@@ -9,49 +9,13 @@
                 <jaxb:typesafeEnumClass/>
             </appinfo>
         </annotation>
-        <restriction base="xsd:int">
-            <enumeration value="1">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="PASSED"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="2">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="FAILED"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="3">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="BLOCKED"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="4">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="ChatBanned"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="5">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="ChatNotAllowed"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="6">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="NoPermission"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
+        <restriction base="xsd:string">
+            <enumeration value="PASSED"/>
+            <enumeration value="FAILED"/>
+            <enumeration value="BLOCKED"/>
+            <enumeration value="ChatBanned"/>
+            <enumeration value="ChatNotAllowed"/>
+            <enumeration value="NoPermission"/>
         </restriction>
     </simpleType>
 </schema>

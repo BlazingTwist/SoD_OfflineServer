@@ -5,7 +5,13 @@
 
     <complexType name="SuggestionResult">
         <sequence>
-            <element maxOccurs="unbounded" minOccurs="0" name="Suggestion" type="xsd:string"/>
+            <element maxOccurs="unbounded" minOccurs="0" name="Suggestion" type="xsd:string">
+                <annotation>
+                    <appinfo>
+                        <jaxb:property name="Suggestion"/>
+                    </appinfo>
+                </annotation>
+            </element>
         </sequence>
     </complexType>
 </schema>

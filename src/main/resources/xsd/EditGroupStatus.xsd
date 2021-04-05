@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
+        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+
+    <simpleType name="EditGroupStatus">
+        <annotation>
+            <appinfo>
+                <jaxb:typesafeEnumClass/>
+            </appinfo>
+        </annotation>
+        <restriction base="xsd:int">
+            <enumeration value="1">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Success"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="2">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="Error"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="3">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="UnableToGetUserDetails"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="4">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupNameInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="5">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupDescriptionInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="6">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupNameIsDuplicate"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="7">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupTypeIsInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="8">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="PermissionDenied"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="9">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupNotFound"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="10">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupMaxMemberLimitInvalid"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+            <enumeration value="11">
+                <annotation>
+                    <appinfo>
+                        <jaxb:typesafeEnumMember name="GroupOwnerHasInSufficientCurrency"/>
+                    </appinfo>
+                </annotation>
+            </enumeration>
+        </restriction>
+    </simpleType>
+</schema>

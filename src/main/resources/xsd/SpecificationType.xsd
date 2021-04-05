@@ -9,21 +9,9 @@
                 <jaxb:typesafeEnumClass/>
             </appinfo>
         </annotation>
-        <restriction base="xsd:int">
-            <enumeration value="1">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="Ingredient"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="2">
-                <annotation>
-                    <appinfo>
-                        <jaxb:typesafeEnumMember name="Output"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
+        <restriction base="xsd:string">
+            <enumeration value="Ingredient"/>
+            <enumeration value="Output"/>
         </restriction>
     </simpleType>
 </schema>
