@@ -69,6 +69,14 @@
     </build>
 
     <dependencies>
+        <!-- Crypto -->
+        <dependency>
+            <groupId>at.favre.lib</groupId>
+            <artifactId>bcrypt</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+
+
         <!-- HOCON / JSON parsing -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
