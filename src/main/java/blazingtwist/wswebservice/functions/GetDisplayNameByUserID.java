@@ -12,7 +12,7 @@ public class GetDisplayNameByUserID extends WebServiceFunction {
 	}
 
 	@Override
-	public void handle(HttpExchange exchange, Map<String, String> params) {
+	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
 		/*try {
 			JAXBContext contextObject = JAXBContext.newInstance(String.class);
 			Marshaller marshaller = contextObject.createMarshaller();

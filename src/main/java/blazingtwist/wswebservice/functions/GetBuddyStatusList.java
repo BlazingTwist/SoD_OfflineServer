@@ -12,7 +12,7 @@ public class GetBuddyStatusList extends WebServiceFunction {
 	}
 
 	@Override
-	public void handle(HttpExchange exchange, Map<String, String> params) {
+	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
 		// TODO
 	}
 }

@@ -12,7 +12,7 @@ public class GetUserMissionState extends WebServiceFunction {
 	}
 
 	@Override
-	public void handle(HttpExchange exchange, Map<String, String> params) {
+	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
 		// two different calls
 		// * string (userId) | MissionRequestFilter (filter)
 		// * string (userId) | MissionRequestFilterV2 (filter)

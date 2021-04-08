@@ -12,7 +12,7 @@ public class RegisterChild extends WebServiceFunction {
 	}
 
 	@Override
-	public void handle(HttpExchange exchange, Map<String, String> params) {
+	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
 		// if ChildRegistrationData.IsSuggestAvatarName is set, then return RegistrationResult
 		// otherwise return MembershipUserStatus
 

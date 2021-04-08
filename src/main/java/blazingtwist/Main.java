@@ -3,7 +3,6 @@ package blazingtwist;
 import blazingtwist.config.util.ConfigUtils;
 import blazingtwist.config.web.WebConfig;
 import blazingtwist.config.web.WebFunctionConfig;
-import blazingtwist.crypto.TripleDes;
 import blazingtwist.wswebservice.WebServiceFunction;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
@@ -25,19 +24,6 @@ public class Main {
 	}
 
 	public static void main(String[] args) {
-		if(true){
-			String input = "RjCCPGkzRQjfrQeeDHXUVkcfY/ScjPU+3zmqIvPqfwdvM3Ij8KmCncGqb1a3gPv+GA4mHGbBYn+g/kjFnn51ucUOv+1zRXHSddjIhJGc8YY=";
-
-			String decrypt = TripleDes.decrypt(input);
-			System.out.println("got: " + decrypt);
-
-			String encrypt = TripleDes.encrypt(decrypt);
-			System.out.println("got: " + encrypt);
-
-			assert input.equals(encrypt);
-			return;
-		}
-
 		WebConfig webConfig = ConfigUtils.loadConfig(WebConfig.class, "WebConfig.conf");
 		HashMap<String, WebFunctionConfig> webFunctionsConfig = webConfig.getWebServiceFunctions();
 		ArrayList<WebServiceFunction> webFunctions = new ArrayList<>();
