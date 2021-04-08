@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="ItemExchange.xsd"/>
+    <xsi:include schemaLocation="ItemExchange.xsd"/>
 
-    <complexType name="ArrayOfItemExchange">
-        <sequence>
-            <element maxOccurs="unbounded" minOccurs="0" name="ItemExchange" type="sod:ItemExchange">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="ArrayOfItemExchange">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ItemExchange" type="ItemExchange">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ItemExchangeArray"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

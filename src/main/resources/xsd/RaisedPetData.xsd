@@ -1,167 +1,166 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="RaisedPetGrowthState.xsd"/>
-    <include schemaLocation="Gender.xsd"/>
-    <include schemaLocation="RaisedPetAccessory.xsd"/>
-    <include schemaLocation="RaisedPetAttribute.xsd"/>
-    <include schemaLocation="RaisedPetColor.xsd"/>
-    <include schemaLocation="RaisedPetSkill.xsd"/>
-    <include schemaLocation="RaisedPetState.xsd"/>
+    <xsi:include schemaLocation="RaisedPetGrowthState.xsd"/>
+    <xsi:include schemaLocation="Gender.xsd"/>
+    <xsi:include schemaLocation="RaisedPetAccessory.xsd"/>
+    <xsi:include schemaLocation="RaisedPetAttribute.xsd"/>
+    <xsi:include schemaLocation="RaisedPetColor.xsd"/>
+    <xsi:include schemaLocation="RaisedPetSkill.xsd"/>
+    <xsi:include schemaLocation="RaisedPetState.xsd"/>
 
-    <complexType name="RaisedPetData">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="ispetcreated" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="RaisedPetData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ispetcreated" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="IsPetCreated"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="validationmessage" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="validationmessage" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ValidationMessage"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="RaisedPetID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="eid" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="eid" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="EntityID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="uid" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="uid" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="UserID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="n" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="n" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Name"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ptid" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ptid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="PetTypeID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="gs" type="sod:RaisedPetGrowthState">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="gs" type="RaisedPetGrowthState">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="GrowthState"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ip" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ip" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ImagePosition"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="g" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="g" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Geometry"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="t" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="t" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Texture"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="gd" type="sod:Gender">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="gd" type="Gender">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Gender"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="ac" type="sod:RaisedPetAccessory">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ac" type="RaisedPetAccessory">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Accessories"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="at" type="sod:RaisedPetAttribute">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="at" type="RaisedPetAttribute">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Attributes"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="c" type="sod:RaisedPetColor">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="c" type="RaisedPetColor">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Colors"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="sk" type="sod:RaisedPetSkill">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="sk" type="RaisedPetSkill">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Skills"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="st" type="sod:RaisedPetState">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="st" type="RaisedPetState">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="States"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="is" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="is" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="IsSelected"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ir" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ir" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="IsReleased"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="cdt" type="xsd:dateTime">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="cdt" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="CreateDate"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="updt" type="xsd:dateTime">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="updt" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="UpdateDate"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

@@ -1,84 +1,83 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="AvatarDisplayData.xsd"/>
-    <include schemaLocation="UserAnswerData.xsd"/>
-    <include schemaLocation="GameDataSummary.xsd"/>
-    <include schemaLocation="UserProfileGroupData.xsd"/>
-    <include schemaLocation="UserProfileTag.xsd"/>
-    <include schemaLocation="UserGrade.xsd"/>
+    <xsi:include schemaLocation="AvatarDisplayData.xsd"/>
+    <xsi:include schemaLocation="UserAnswerData.xsd"/>
+    <xsi:include schemaLocation="GameDataSummary.xsd"/>
+    <xsi:include schemaLocation="UserProfileGroupData.xsd"/>
+    <xsi:include schemaLocation="UserProfileTag.xsd"/>
+    <xsi:include schemaLocation="UserGrade.xsd"/>
 
-    <complexType name="UserProfileData">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="ID" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="Avatar" type="sod:AvatarDisplayData">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="UserProfileData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Avatar" type="AvatarDisplayData">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="avatarInfo"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Ach" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Ach" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="achievementCount"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Mth" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Mth" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="mythieCount"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="Answer" type="sod:UserAnswerData">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Answer" type="UserAnswerData">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="answerData"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="Game" type="sod:GameDataSummary">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Game" type="GameDataSummary">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="gameInfo"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="gc" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="gc" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="gameCurrency"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="cc" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="cc" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="cashCurrency"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="BuddyCount" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="ActivityCount" type="xsd:int"/>
-            <element maxOccurs="unbounded" minOccurs="0" name="Groups" type="sod:UserProfileGroupData"/>
-            <element maxOccurs="1" minOccurs="1" name="UPT" type="sod:UserProfileTag">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="BuddyCount" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ActivityCount" type="xsd:int"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="Groups" type="UserProfileGroupData"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="UPT" type="UserProfileTag">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="userProfileTag"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="UG" type="sod:UserGrade">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UG" type="UserGrade">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="userGradeData"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

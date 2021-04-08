@@ -1,9 +1,9 @@
 package blazingtwist.wswebservice.functions;
 
-import blazingtwist.sod.AvatarDisplayData;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
+import generated.AvatarDisplayData;
 import java.io.StringWriter;
 import java.util.Map;
 import javax.xml.bind.JAXBContext;

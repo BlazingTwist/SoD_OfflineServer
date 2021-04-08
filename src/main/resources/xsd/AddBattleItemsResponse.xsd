@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="Status.xsd"/>
-    <include schemaLocation="InventoryItemStatsMap.xsd"/>
+    <xsi:include schemaLocation="Status.xsd"/>
+    <xsi:include schemaLocation="InventoryItemStatsMap.xsd"/>
 
-    <complexType name="AddBattleItemsResponse">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="ST" type="sod:Status">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="AddBattleItemsResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ST" type="Status">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Status"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="IISM" type="sod:InventoryItemStatsMap">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="IISM" type="InventoryItemStatsMap">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="InventoryItemStatsMaps"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

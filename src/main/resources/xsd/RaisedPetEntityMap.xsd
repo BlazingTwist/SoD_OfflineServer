@@ -1,25 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <complexType name="RaisedPetEntityMap">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="RPID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="RaisedPetEntityMap">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="RPID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="RaisedPetID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="EID" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="EID" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="EntityID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

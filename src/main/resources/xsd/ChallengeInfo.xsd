@@ -1,70 +1,69 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="ChallengeGameInfo.xsd"/>
-    <include schemaLocation="ChallengeContenderInfo.xsd"/>
+    <xsi:include schemaLocation="ChallengeGameInfo.xsd"/>
+    <xsi:include schemaLocation="ChallengeContenderInfo.xsd"/>
 
-    <complexType name="ChallengeInfo">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="ChallengeID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="ChallengeInfo">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ChallengeID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ChallengeID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="UserID" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="UserID" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="UserID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ProductGroupID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ProductGroupID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ProductGroupID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Points" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Points" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Points"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ExpirationDate" type="xsd:dateTime">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ExpirationDate" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ExpirationDate"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ChallengeGameInfo" type="sod:ChallengeGameInfo">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ChallengeGameInfo" type="ChallengeGameInfo">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ChallengeGameInfo"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="ChallengeContenders" type="sod:ChallengeContenderInfo">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ChallengeContenders" type="ChallengeContenderInfo">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ChallengeContenders"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ExpirationDuration" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ExpirationDuration" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ExpirationDuration"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

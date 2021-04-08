@@ -1,61 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="MissionPair.xsd"/>
+    <xsi:include schemaLocation="MissionPair.xsd"/>
 
-    <complexType name="MissionRequestFilterV2">
-        <sequence>
-            <element maxOccurs="unbounded" minOccurs="0" name="MGID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="MissionRequestFilterV2">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="MGID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="MissionGroupIDs"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="MP" type="sod:MissionPair">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="MP" type="MissionPair">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="MissionPair"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="TID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="TID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="TaskIDList"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="PIDd" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PIDd" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ProductID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="S" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="S" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="SearchDepth"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="GCM" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GCM" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="GetCompletedMission"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="PGID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="PGID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ProductGroupID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

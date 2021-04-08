@@ -1,88 +1,87 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <simpleType name="MembershipUserStatus">
-        <annotation>
-            <appinfo>
+    <xsi:simpleType name="MembershipUserStatus">
+        <xsi:annotation>
+            <xsi:appinfo>
                 <jaxb:typesafeEnumClass/>
-            </appinfo>
-        </annotation>
-        <restriction base="xsd:string">
-            <enumeration value="Success"/>
-            <enumeration value="InvalidUserName"/>
-            <enumeration value="InvalidPassword"/>
-            <enumeration value="InvalidEmail"/>
-            <enumeration value="DuplicateUserName"/>
-            <enumeration value="DuplicateEmail"/>
-            <enumeration value="InvalidCulture"/>
-            <enumeration value="InvalidDOB"/>
-            <enumeration value="IsDeleted"/>
-            <enumeration value="InvalidApiToken"/>
-            <enumeration value="ValidationError"/>
-            <enumeration value="UserCreationFailed"/>
-            <enumeration value="TokenNotFound"/>
-            <enumeration value="InvalidChildUserName"/>
-            <enumeration value="InvalidChildDOB"/>
-            <enumeration value="InvalidPreRegisteredEmail"/>
-            <enumeration value="InvalidGuestChildUserName"/>
-            <enumeration value="GuestProfileNotFound"/>
-            <enumeration value="GuestAccountNotAnonymous"/>
-            <enumeration value="GuestAccountNotFound"/>
-            <enumeration value="FacebookAccessTokenFailed"/>
-            <enumeration value="DuplicateFacebookUserID"/>
-            <enumeration value="UnmatchedUserNameFacebookUserID"/>
-            <enumeration value="UnlinkedFacebookID"/>
-            <enumeration value="ValidateSignatureFailed"/>
-            <enumeration value="ProductGroupNotFound"/>
-            <enumeration value="DataDeserializationFailed"/>
-            <enumeration value="ChildNotAdded"/>
-            <enumeration value="NoChildData"/>
-            <enumeration value="InvalidSSOUserID"/>
-            <enumeration value="UnlinkedSSOUserID"/>
-            <enumeration value="ExternalCallFailed"/>
-            <enumeration value="IPAddressInvalid"/>
-            <enumeration value="EmailLengthInvalid"/>
-            <enumeration value="EmailBlocked"/>
-            <enumeration value="EmailCannotBeUsed"/>
-            <enumeration value="RegistrationFailedTryAgain"/>
-            <enumeration value="IPAddressBlocked"/>
-            <enumeration value="LoginAttemptsTooMany"/>
-            <enumeration value="UserIsBanned"/>
-            <enumeration value="GenderIsBlank"/>
-            <enumeration value="PasswordRecoveryAttemptsTooMany"/>
-            <enumeration value="UserNameLengthMismatch"/>
-            <enumeration value="UserNameRestriction"/>
-            <enumeration value="UserNameContainsProductName"/>
-            <enumeration value="UserNameContainsBadWord"/>
-            <enumeration value="PasswordLengthMismatch"/>
-            <enumeration value="PasswordContainsInvalidChars"/>
-            <enumeration value="PasswordShouldContainNumbers"/>
-            <enumeration value="PasswordIsOfSameCharacter"/>
-            <enumeration value="PasswordIsNotSecure"/>
-            <enumeration value="PasswordIsSameAsUserName"/>
-            <enumeration value="EmailContainsUserName"/>
-            <enumeration value="EmailDoesNotMatchWithRegisteredEmail"/>
-            <enumeration value="EmailUseExceededLimit"/>
-            <enumeration value="ExternalSystemFailed"/>
-            <enumeration value="FacebookAuthProviderMissing"/>
-            <enumeration value="FaceBookBusinessAPIError"/>
-            <enumeration value="FaceBookInvalidUserIDToken"/>
-            <enumeration value="FaceBookLoginSuccess"/>
-            <enumeration value="FaceBookLoginFailed"/>
-            <enumeration value="FaceBookUserEmpty"/>
-            <enumeration value="FaceBooktokenEmpty"/>
-            <enumeration value="FaceBookLinkExists"/>
-            <enumeration value="FaceBookNoLink"/>
-            <enumeration value="FaceBookUnderAge"/>
-            <enumeration value="FaceBookGraphError"/>
-            <enumeration value="UserNameDoesNotExists"/>
-            <enumeration value="EmailIsEmpty"/>
-            <enumeration value="EmailIsBad"/>
-            <enumeration value="EmailShouldBeInLowerCase"/>
-            <enumeration value="UserPolicyNotAccepted"/>
-            <enumeration value="ProviderError"/>
-        </restriction>
-    </simpleType>
-</schema>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:string">
+            <xsi:enumeration value="Success"/>
+            <xsi:enumeration value="InvalidUserName"/>
+            <xsi:enumeration value="InvalidPassword"/>
+            <xsi:enumeration value="InvalidEmail"/>
+            <xsi:enumeration value="DuplicateUserName"/>
+            <xsi:enumeration value="DuplicateEmail"/>
+            <xsi:enumeration value="InvalidCulture"/>
+            <xsi:enumeration value="InvalidDOB"/>
+            <xsi:enumeration value="IsDeleted"/>
+            <xsi:enumeration value="InvalidApiToken"/>
+            <xsi:enumeration value="ValidationError"/>
+            <xsi:enumeration value="UserCreationFailed"/>
+            <xsi:enumeration value="TokenNotFound"/>
+            <xsi:enumeration value="InvalidChildUserName"/>
+            <xsi:enumeration value="InvalidChildDOB"/>
+            <xsi:enumeration value="InvalidPreRegisteredEmail"/>
+            <xsi:enumeration value="InvalidGuestChildUserName"/>
+            <xsi:enumeration value="GuestProfileNotFound"/>
+            <xsi:enumeration value="GuestAccountNotAnonymous"/>
+            <xsi:enumeration value="GuestAccountNotFound"/>
+            <xsi:enumeration value="FacebookAccessTokenFailed"/>
+            <xsi:enumeration value="DuplicateFacebookUserID"/>
+            <xsi:enumeration value="UnmatchedUserNameFacebookUserID"/>
+            <xsi:enumeration value="UnlinkedFacebookID"/>
+            <xsi:enumeration value="ValidateSignatureFailed"/>
+            <xsi:enumeration value="ProductGroupNotFound"/>
+            <xsi:enumeration value="DataDeserializationFailed"/>
+            <xsi:enumeration value="ChildNotAdded"/>
+            <xsi:enumeration value="NoChildData"/>
+            <xsi:enumeration value="InvalidSSOUserID"/>
+            <xsi:enumeration value="UnlinkedSSOUserID"/>
+            <xsi:enumeration value="ExternalCallFailed"/>
+            <xsi:enumeration value="IPAddressInvalid"/>
+            <xsi:enumeration value="EmailLengthInvalid"/>
+            <xsi:enumeration value="EmailBlocked"/>
+            <xsi:enumeration value="EmailCannotBeUsed"/>
+            <xsi:enumeration value="RegistrationFailedTryAgain"/>
+            <xsi:enumeration value="IPAddressBlocked"/>
+            <xsi:enumeration value="LoginAttemptsTooMany"/>
+            <xsi:enumeration value="UserIsBanned"/>
+            <xsi:enumeration value="GenderIsBlank"/>
+            <xsi:enumeration value="PasswordRecoveryAttemptsTooMany"/>
+            <xsi:enumeration value="UserNameLengthMismatch"/>
+            <xsi:enumeration value="UserNameRestriction"/>
+            <xsi:enumeration value="UserNameContainsProductName"/>
+            <xsi:enumeration value="UserNameContainsBadWord"/>
+            <xsi:enumeration value="PasswordLengthMismatch"/>
+            <xsi:enumeration value="PasswordContainsInvalidChars"/>
+            <xsi:enumeration value="PasswordShouldContainNumbers"/>
+            <xsi:enumeration value="PasswordIsOfSameCharacter"/>
+            <xsi:enumeration value="PasswordIsNotSecure"/>
+            <xsi:enumeration value="PasswordIsSameAsUserName"/>
+            <xsi:enumeration value="EmailContainsUserName"/>
+            <xsi:enumeration value="EmailDoesNotMatchWithRegisteredEmail"/>
+            <xsi:enumeration value="EmailUseExceededLimit"/>
+            <xsi:enumeration value="ExternalSystemFailed"/>
+            <xsi:enumeration value="FacebookAuthProviderMissing"/>
+            <xsi:enumeration value="FaceBookBusinessAPIError"/>
+            <xsi:enumeration value="FaceBookInvalidUserIDToken"/>
+            <xsi:enumeration value="FaceBookLoginSuccess"/>
+            <xsi:enumeration value="FaceBookLoginFailed"/>
+            <xsi:enumeration value="FaceBookUserEmpty"/>
+            <xsi:enumeration value="FaceBooktokenEmpty"/>
+            <xsi:enumeration value="FaceBookLinkExists"/>
+            <xsi:enumeration value="FaceBookNoLink"/>
+            <xsi:enumeration value="FaceBookUnderAge"/>
+            <xsi:enumeration value="FaceBookGraphError"/>
+            <xsi:enumeration value="UserNameDoesNotExists"/>
+            <xsi:enumeration value="EmailIsEmpty"/>
+            <xsi:enumeration value="EmailIsBad"/>
+            <xsi:enumeration value="EmailShouldBeInLowerCase"/>
+            <xsi:enumeration value="UserPolicyNotAccepted"/>
+            <xsi:enumeration value="ProviderError"/>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

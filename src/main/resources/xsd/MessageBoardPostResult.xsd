@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <complexType name="MessageBoardPostResult">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="ErrorID" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="MessageID" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="1" name="CreateTime" type="xsd:dateTime"/>
-            <element maxOccurs="1" minOccurs="0" name="UpdateDate" type="xsd:dateTime"/>
-        </sequence>
-    </complexType>
-</schema>
+    <xsi:complexType name="MessageBoardPostResult">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ErrorID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="MessageID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="CreateTime" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UpdateDate" type="xsd:dateTime"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

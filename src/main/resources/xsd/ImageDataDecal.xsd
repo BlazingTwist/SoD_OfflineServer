@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="ImageDataDecalPosition.xsd"/>
+    <xsi:include schemaLocation="ImageDataDecalPosition.xsd"/>
 
-    <complexType name="ImageDataDecal">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="Position" type="sod:ImageDataDecalPosition"/>
-            <element maxOccurs="1" minOccurs="1" name="Width" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="Height" type="xsd:string"/>
-        </sequence>
-    </complexType>
-</schema>
+    <xsi:complexType name="ImageDataDecal">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Name" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Position" type="ImageDataDecalPosition"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Width" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Height" type="xsd:string"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

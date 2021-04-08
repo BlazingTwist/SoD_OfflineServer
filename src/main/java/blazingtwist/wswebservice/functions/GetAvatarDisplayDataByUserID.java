@@ -1,12 +1,12 @@
 package blazingtwist.wswebservice.functions;
 
-import blazingtwist.sod.AvatarData;
-import blazingtwist.sod.AvatarDataPart;
-import blazingtwist.sod.AvatarDisplayData;
-import blazingtwist.sod.Gender;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
+import generated.AvatarData;
+import generated.AvatarDataPart;
+import generated.AvatarDisplayData;
+import generated.Gender;
 import java.io.StringWriter;
 import java.util.Map;
 import javax.xml.bind.JAXBContext;

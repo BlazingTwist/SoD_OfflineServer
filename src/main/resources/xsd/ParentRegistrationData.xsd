@@ -1,222 +1,221 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="ChildRegistrationData.xsd"/>
-    <include schemaLocation="ExternalAuthProvider.xsd"/>
-    <include schemaLocation="UserPolicy.xsd"/>
-    <include schemaLocation="EmailNotification.xsd"/>
+    <xsi:include schemaLocation="ChildRegistrationData.xsd"/>
+    <xsi:include schemaLocation="ExternalAuthProvider.xsd"/>
+    <xsi:include schemaLocation="UserPolicy.xsd"/>
+    <xsi:include schemaLocation="EmailNotification.xsd"/>
 
-    <complexType name="ParentRegistrationData">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="Email" type="xsd:string">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="ParentRegistrationData">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Email" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Email"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="FirstName" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="FirstName" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="FirstName"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="LastName" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="LastName" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="LastName"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Password" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Password" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Password"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Locale" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Locale" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Locale"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="BirthDate" type="xsd:dateTime">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="BirthDate" type="xsd:dateTime">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="BirthDate"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="ReceivesEmail" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="ReceivesEmail" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ReceivesEmail"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="SubscriptionID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="SubscriptionID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="SubscriptionID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="ChildList" type="sod:ChildRegistrationData">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ChildList" type="ChildRegistrationData">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ChildList"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="FromApiKey" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="FromApiKey" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="FromApiKey"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ToApiKey" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ToApiKey" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="ToApiKey"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ApiToken" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ApiToken" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="ApiToken"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="HasAcquisitionSource" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="HasAcquisitionSource" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="HasAcquisitionSource"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="FaceBookUserId" type="xsd:long">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="FaceBookUserId" type="xsd:long">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="FaceBookUserId"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="FacebookAccessToken" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="FacebookAccessToken" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="FacebookAccessToken"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="FavouriteTeamID" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="FavouriteTeamID" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="FavouriteTeamID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="GroupID" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GroupID" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                    <xsi:appinfo>
                         <jaxb:property name="GroupID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="SendActivationEmail" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SendActivationEmail" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="SendActivationEmail"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="AutoActivate" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="AutoActivate" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="AutoActivate"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="SendWelcomeEmail" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SendWelcomeEmail" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="SendWelcomeEmail"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="IsAnonymous" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="IsAnonymous" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="IsAnonymous"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="RequiredLogin" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="RequiredLogin" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="RequiredLogin"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="LinkUserToFaceBook" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="LinkUserToFaceBook" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="LinkUserToFaceBook"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ClientIP" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ClientIP" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ClientIP"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ExternalAuthProvider" type="sod:ExternalAuthProvider">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ExternalAuthProvider" type="ExternalAuthProvider">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ExternalAuthProvider"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ExternalUserID" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ExternalUserID" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ExternalUserID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="ExternalAuthData" type="xsd:string">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ExternalAuthData" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="ExternalAuthData"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="UserPolicy" type="sod:UserPolicy">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UserPolicy" type="UserPolicy">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="UserPolicy"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="EmailNotification" type="sod:EmailNotification">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="EmailNotification" type="EmailNotification">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="EmailNotification"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

@@ -1,41 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="ItemPositionValidationResult.xsd"/>
-    <include schemaLocation="UserItemState.xsd"/>
+    <xsi:include schemaLocation="ItemPositionValidationResult.xsd"/>
+    <xsi:include schemaLocation="UserItemState.xsd"/>
 
-    <complexType name="UserItemPositionSetResponse">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="s" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="UserItemPositionSetResponse">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="s" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Success"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="ids" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ids" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="CreatedUserItemPositionIDs"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="r" type="sod:ItemPositionValidationResult">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="r" type="ItemPositionValidationResult">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Result"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="uciis" type="sod:UserItemState">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="uciis" type="UserItemState">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="UserItemStates"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

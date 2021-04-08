@@ -1,78 +1,77 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <simpleType name="AuthorizeJoinStatus">
-        <annotation>
-            <appinfo>
+    <xsi:simpleType name="AuthorizeJoinStatus">
+        <xsi:annotation>
+            <xsi:appinfo>
                 <jaxb:typesafeEnumClass/>
-            </appinfo>
-        </annotation>
-        <restriction base="xsd:int">
-            <enumeration value="1">
-                <annotation>
-                    <appinfo>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:int">
+            <xsi:enumeration value="1">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="Success"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="2">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="2">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="Error"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="3">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="3">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="GroupIsFull"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="4">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="4">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="GroupTypeIsNotPublic"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="5">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="5">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="UserAlreadyMemberOfTheGroup"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="6">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="6">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="GroupTypeIsPublic"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="7">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="7">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="ApproverNotInThisGroup"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="8">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="8">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="ApproverHasNoPermission"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="9">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="9">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="UserHasNoJoinRequest"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-        </restriction>
-    </simpleType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

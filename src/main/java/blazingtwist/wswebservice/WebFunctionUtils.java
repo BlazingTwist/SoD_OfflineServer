@@ -2,13 +2,17 @@ package blazingtwist.wswebservice;
 
 import blazingtwist.crypto.TripleDes;
 import java.io.StringReader;
+import java.io.StringWriter;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
+import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
 
 public class WebFunctionUtils {
@@ -21,6 +25,7 @@ public class WebFunctionUtils {
 				.collect(Collectors.toMap(matcher -> matcher.group(1), matcher -> matcher.group(2)));
 	}
 
+	@SafeVarargs
 	public static <K, V> boolean checkKeysPresent(Map<K, V> map, K... keys) {
 		if (keys == null || keys.length == 0) {
 			return true;
@@ -38,15 +43,31 @@ public class WebFunctionUtils {
 		return true;
 	}
 
-	public static <T> T unmarshalEncryptedXml(String encryptedString, Class<? extends T> clazz) throws JAXBException {
+	public static <T> T unmarshalEncryptedXml(String encryptedString, Class<T> clazz) throws JAXBException {
 		return unmarshalXml(TripleDes.decrypt(encryptedString), clazz);
 	}
 
-	public static <T> T unmarshalXml(String xmlString, Class<? extends T> clazz) throws JAXBException {
+	public static <T> T unmarshalXml(String xmlString, Class<T> clazz) throws JAXBException {
 		JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
 		Unmarshaller unmarshaller = jaxbContext.createUnmarshaller();
 		return unmarshaller
 				.unmarshal(new StreamSource(new StringReader(xmlString)), clazz)
 				.getValue();
+	}
+
+	public static <T> String marshalEncryptedXml(T data, String rootName, Class<T> clazz) throws JAXBException {
+		return TripleDes.encrypt(marshalXml(data, rootName, clazz));
+	}
+
+	public static <T> String marshalXml(T data, String rootName, Class<T> clazz) throws JAXBException {
+		JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
+		Marshaller marshaller = jaxbContext.createMarshaller();
+		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+		marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+		StringWriter writer = new StringWriter();
+
+		JAXBElement<T> element = new JAXBElement<>(new QName(rootName), clazz, data);
+		marshaller.marshal(element, writer);
+		return writer.toString();
 	}
 }

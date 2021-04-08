@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="ItemStateCriteria.xsd"/>
-    <include schemaLocation="CompletionAction.xsd"/>
+    <xsi:include schemaLocation="ItemStateCriteria.xsd"/>
+    <xsi:include schemaLocation="CompletionAction.xsd"/>
 
-    <complexType name="ItemStateRule">
-        <sequence>
-            <element maxOccurs="unbounded" minOccurs="1" name="Criterias" type="sod:ItemStateCriteria"/>
-            <element maxOccurs="1" minOccurs="1" name="CompletionAction" type="sod:CompletionAction"/>
-        </sequence>
-    </complexType>
-</schema>
+    <xsi:complexType name="ItemStateRule">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="1" name="Criterias" type="ItemStateCriteria"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="CompletionAction" type="CompletionAction"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

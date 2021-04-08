@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="AvatarDataPartOffset.xsd"/>
-    <include schemaLocation="AvatarPartAttribute.xsd"/>
+    <xsi:include schemaLocation="AvatarDataPartOffset.xsd"/>
+    <xsi:include schemaLocation="AvatarPartAttribute.xsd"/>
 
     <xsd:complexType name="AvatarDataPart">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="PartType" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="Offsets">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="PartType" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Offsets">
                 <xsd:complexType>
-                    <sequence>
-                        <element maxOccurs="unbounded" minOccurs="0" name="Offset" type="sod:AvatarDataPartOffset"/>
-                    </sequence>
+                    <xsi:sequence>
+                        <xsi:element maxOccurs="unbounded" minOccurs="0" name="Offset" type="AvatarDataPartOffset"/>
+                    </xsi:sequence>
                 </xsd:complexType>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Geometries">
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Geometries">
                 <xsd:complexType>
-                    <sequence>
-                        <element maxOccurs="unbounded" minOccurs="0" name="Geometry" type="xsd:string"/>
-                    </sequence>
+                    <xsi:sequence>
+                        <xsi:element maxOccurs="unbounded" minOccurs="0" name="Geometry" type="xsd:string"/>
+                    </xsi:sequence>
                 </xsd:complexType>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Textures">
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Textures">
                 <xsd:complexType>
-                    <sequence>
-                        <element maxOccurs="unbounded" minOccurs="0" name="Texture" type="xsd:string"/>
-                    </sequence>
+                    <xsi:sequence>
+                        <xsi:element maxOccurs="unbounded" minOccurs="0" name="Texture" type="xsd:string"/>
+                    </xsi:sequence>
                 </xsd:complexType>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="Attributes">
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Attributes">
                 <xsd:complexType>
-                    <sequence>
-                        <element maxOccurs="unbounded" minOccurs="0" name="Attribute" type="sod:AvatarPartAttribute"/>
-                    </sequence>
+                    <xsi:sequence>
+                        <xsi:element maxOccurs="unbounded" minOccurs="0" name="Attribute" type="AvatarPartAttribute"/>
+                    </xsi:sequence>
                 </xsd:complexType>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="Uiid" type="xsd:int">
-                <annotation>
-                    <appinfo>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Uiid" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="userInventoryID"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
     </xsd:complexType>
-</schema>
+</xsi:schema>

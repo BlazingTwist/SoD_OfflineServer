@@ -1,6 +1,6 @@
 # Exclude all files by default.
 /.*/=exclude
 
-/blazingtwist\.sod\.AvatarDataPart\..*/=include
-/blazingtwist\.sod\.ProductData\..*/=include
-/blazingtwist\.sod\.SceneData\..*/=include
+/generated\.AvatarDataPart\..*/=include
+/generated\.ProductData\..*/=include
+/generated\.SceneData\..*/=include

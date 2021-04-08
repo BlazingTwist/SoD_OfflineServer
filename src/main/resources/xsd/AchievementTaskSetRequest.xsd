@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="AchievementTask.xsd"/>
+    <xsi:include schemaLocation="AchievementTask.xsd"/>
 
-    <complexType name="AchievementTaskSetRequest">
-        <sequence>
-            <element maxOccurs="unbounded" minOccurs="0" name="as" type="sod:AchievementTask">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="AchievementTaskSetRequest">
+        <xsi:sequence>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="as" type="AchievementTask">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="AchievementTaskSet"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

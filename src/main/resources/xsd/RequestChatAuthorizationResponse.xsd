@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <simpleType name="RequestChatAuthorizationResponse">
-        <annotation>
-            <appinfo>
+    <xsi:simpleType name="RequestChatAuthorizationResponse">
+        <xsi:annotation>
+            <xsi:appinfo>
                 <jaxb:typesafeEnumClass/>
-            </appinfo>
-        </annotation>
-        <restriction base="xsd:int">
-            <enumeration value="0">
-                <annotation>
-                    <appinfo>
+            </xsi:appinfo>
+        </xsi:annotation>
+        <xsi:restriction base="xsd:int">
+            <xsi:enumeration value="0">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="ERROR"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="1">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="1">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="ACCEPTED"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="2">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="2">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="ALREADY_EXISTS"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-            <enumeration value="3">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+            <xsi:enumeration value="3">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="INVALID_EMAIL_ADDRESS"/>
-                    </appinfo>
-                </annotation>
-            </enumeration>
-        </restriction>
-    </simpleType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:enumeration>
+        </xsi:restriction>
+    </xsi:simpleType>
+</xsi:schema>

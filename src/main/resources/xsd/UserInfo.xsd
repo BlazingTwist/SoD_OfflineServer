@@ -1,47 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
     <xsd:include schemaLocation="Gender.xsd"/>
 
-    <complexType name="UserInfo">
-        <sequence>
-            <element maxOccurs="1" minOccurs="0" name="MembershipID" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="0" name="UserID" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="0" name="ParentUserID" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="Username" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="FirstName" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="1" name="MultiplayerEnabled" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="BirthDate" type="xsd:dateTime"/>
-            <element maxOccurs="1" minOccurs="0" name="GenderID" type="sod:Gender"/>
-            <element maxOccurs="1" minOccurs="0" name="Age" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="Partner" type="xsd:string"/>
-            <element maxOccurs="1" minOccurs="0" name="lid" type="xsd:string">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="UserInfo">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="MembershipID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UserID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ParentUserID" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Username" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="FirstName" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="MultiplayerEnabled" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="BirthDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GenderID" type="Gender"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Age" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Partner" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="lid" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="locale"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="oce" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="oce" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="openChatEnabled"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="1" name="IsApproved" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="RegistrationDate" type="xsd:dateTime"/>
-            <element maxOccurs="1" minOccurs="1" name="FBID" type="xsd:long">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="1" name="IsApproved" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="RegistrationDate" type="xsd:dateTime"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="FBID" type="xsd:long">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="facebookUserID"/>
-                    </appinfo>
-                    <documentation>Unused but required - provide '0'</documentation>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="CreationDate" type="xsd:dateTime"/>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                    <xsi:documentation>Unused but required - provide '0'</xsi:documentation>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="CreationDate" type="xsd:dateTime"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

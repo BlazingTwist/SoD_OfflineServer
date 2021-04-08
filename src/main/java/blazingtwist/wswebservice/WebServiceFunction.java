@@ -8,13 +8,11 @@ import java.io.OutputStream;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
-import java.util.regex.Pattern;
 
 public abstract class WebServiceFunction implements HttpHandler {
 	public static final String CONTENT_LENGTH = "Content-Length";
 	public static final String CONTENT_TYPE = "Content-Type";
 	public static final String WWW_FORM_URL_ENCODED = "application/x-www-form-urlencoded";
-	public static final Pattern paramPattern = Pattern.compile("^(.*?)=(.*)$");
 
 	public static final String INVALID_PARAMS = "Received invalid Parameters";
 	public static final String INVALID_BODY = "Received invalid Body";

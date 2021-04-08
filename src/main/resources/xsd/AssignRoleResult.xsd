@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <include schemaLocation="UserRole.xsd"/>
-    <include schemaLocation="AssignRoleStatus.xsd"/>
+    <xsi:include schemaLocation="UserRole.xsd"/>
+    <xsi:include schemaLocation="AssignRoleStatus.xsd"/>
 
-    <complexType name="AssignRoleResult">
-        <sequence>
-            <element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="InitiatorNewRole" type="sod:UserRole"/>
-            <element maxOccurs="1" minOccurs="1" name="Status" type="sod:AssignRoleStatus"/>
-        </sequence>
-    </complexType>
-</schema>
+    <xsi:complexType name="AssignRoleResult">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Success" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="InitiatorNewRole" type="UserRole"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Status" type="AssignRoleStatus"/>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>

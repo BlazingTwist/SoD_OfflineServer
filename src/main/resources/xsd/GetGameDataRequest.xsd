@@ -1,58 +1,57 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
-        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1"
-        xmlns:sod="blazingtwist/sod/" targetNamespace="blazingtwist/sod/">
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
+        xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <complexType name="GetGameDataRequest">
-        <sequence>
-            <element maxOccurs="1" minOccurs="0" name="ProductGroupID" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="UserID" type="xsd:string">
-                <annotation>
-                    <documentation>Client parses this as a System.Guid</documentation>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="GameID" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="GameLevelID" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="DifficultlyID" type="xsd:int"/>
-            <element maxOccurs="1" minOccurs="0" name="IsMultiplayer" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="TopScoresOnly" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="AllProductGroups" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="AllUsers" type="xsd:boolean"/>
-            <element maxOccurs="1" minOccurs="0" name="KEY" type="xsd:string">
-                <annotation>
-                    <appinfo>
+    <xsi:complexType name="GetGameDataRequest">
+        <xsi:sequence>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ProductGroupID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="UserID" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:documentation>Client parses this as a System.Guid</xsi:documentation>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GameID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GameLevelID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="DifficultlyID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="IsMultiplayer" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="TopScoresOnly" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="AllProductGroups" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="AllUsers" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="KEY" type="xsd:string">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Key"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="CNT" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="CNT" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Count"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="SC" type="xsd:int">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SC" type="xsd:int">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="Score"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="1" minOccurs="0" name="AO" type="xsd:boolean">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="AO" type="xsd:boolean">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="AscendingOrder"/>
-                    </appinfo>
-                </annotation>
-            </element>
-            <element maxOccurs="unbounded" minOccurs="0" name="FBIDS" type="xsd:long">
-                <annotation>
-                    <appinfo>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="FBIDS" type="xsd:long">
+                <xsi:annotation>
+                    <xsi:appinfo>
                         <jaxb:property name="FacebookUserIDs"/>
-                    </appinfo>
-                </annotation>
-            </element>
-        </sequence>
-    </complexType>
-</schema>
+                    </xsi:appinfo>
+                </xsi:annotation>
+            </xsi:element>
+        </xsi:sequence>
+    </xsi:complexType>
+</xsi:schema>
