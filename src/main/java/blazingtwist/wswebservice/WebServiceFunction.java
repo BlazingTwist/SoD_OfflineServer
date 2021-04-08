@@ -1,5 +1,6 @@
 package blazingtwist.wswebservice;
 
+import blazingtwist.crypto.TripleDes;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -8,6 +9,7 @@ import java.io.OutputStream;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
+import javax.xml.bind.JAXBException;
 
 public abstract class WebServiceFunction implements HttpHandler {
 	public static final String CONTENT_LENGTH = "Content-Length";
@@ -58,13 +60,22 @@ public abstract class WebServiceFunction implements HttpHandler {
 			}
 		}
 
-		this.handle(exchange, params, body);
+		try{
+			this.handle(exchange, params, body);
+		}catch(Exception e){
+			System.err.println("unhandled exception: " + e.toString());
+			e.printStackTrace();
+			respond(exchange, 500, INTERNAL_ERROR);
+		}
 	}
 
 	public abstract void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body);
 
 	public void respond(HttpExchange exchange, int responseCode, String response) {
 		try {
+			System.out.println("responding with: " + response);
+
+			exchange.getResponseHeaders().add("Content-Type", "text/xml; charset=utf-8");
 			exchange.sendResponseHeaders(responseCode, response.length());
 			OutputStream outputStream = exchange.getResponseBody();
 			outputStream.write(response.getBytes());
@@ -73,6 +84,19 @@ public abstract class WebServiceFunction implements HttpHandler {
 		} catch (IOException e) {
 			System.err.println("unable to send response! context: " + contextName);
 			e.printStackTrace();
+		}
+	}
+
+	public <T> void respondXml(HttpExchange exchange, int responseCode, T response, String rootName, boolean encrypt){
+		try {
+			String resultString = WebFunctionUtils.marshalXml(response, rootName, (Class<T>)response.getClass(), encrypt);
+			if(encrypt){
+				resultString = WebFunctionUtils.marshalXml(TripleDes.encrypt(resultString), "string", String.class, false);
+			}
+			respond(exchange, 200, resultString);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}
 }

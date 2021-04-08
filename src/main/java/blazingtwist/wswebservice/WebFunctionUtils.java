@@ -55,15 +55,15 @@ public class WebFunctionUtils {
 				.getValue();
 	}
 
-	public static <T> String marshalEncryptedXml(T data, String rootName, Class<T> clazz) throws JAXBException {
-		return TripleDes.encrypt(marshalXml(data, rootName, clazz));
+	public static <T> String marshalEncryptedXml(T data, String rootName, Class<T> clazz, boolean fragment) throws JAXBException {
+		return TripleDes.encrypt(marshalXml(data, rootName, clazz, fragment));
 	}
 
-	public static <T> String marshalXml(T data, String rootName, Class<T> clazz) throws JAXBException {
+	public static <T> String marshalXml(T data, String rootName, Class<T> clazz, boolean fragment) throws JAXBException {
 		JAXBContext jaxbContext = JAXBContext.newInstance(clazz);
 		Marshaller marshaller = jaxbContext.createMarshaller();
 		marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-		marshaller.setProperty(Marshaller.JAXB_FRAGMENT, true);
+		marshaller.setProperty(Marshaller.JAXB_FRAGMENT, fragment);
 		StringWriter writer = new StringWriter();
 
 		JAXBElement<T> element = new JAXBElement<>(new QName(rootName), clazz, data);

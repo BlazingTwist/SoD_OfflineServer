@@ -50,8 +50,7 @@ public class LoginParent extends WebServiceFunction {
 			secondChild.setUserID("TempID2"); // TODO
 			result.getChildList().add(secondChild);
 
-			String resultString = WebFunctionUtils.marshalXml(result, "ParentLoginInfo", UserLoginInfo.class);
-			respond(exchange, 200, resultString);
+			respondXml(exchange, 200, result, "ParentLoginInfo", true);
 		} catch (JAXBException e) {
 			e.printStackTrace();
 			respond(exchange, 500, INTERNAL_ERROR);
