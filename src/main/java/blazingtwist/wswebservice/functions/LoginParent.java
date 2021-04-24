@@ -1,5 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
+import blazingtwist.database.MainDBAccessor;
+import blazingtwist.wswebservice.SSOTokenManager;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
@@ -7,7 +9,7 @@ import com.sun.net.httpserver.HttpExchange;
 import generated.MembershipUserStatus;
 import generated.ParentLoginData;
 import generated.ParentLoginInfo;
-import generated.UserLoginInfo;
+import java.sql.SQLException;
 import java.util.Map;
 import javax.xml.bind.JAXBException;
 
@@ -30,28 +32,65 @@ public class LoginParent extends WebServiceFunction {
 		try {
 			ParentLoginData loginData = WebFunctionUtils.unmarshalEncryptedXml(body.get(PARAM_PARENT_LOGIN_DATA), ParentLoginData.class);
 
+			/*
+			 * Request-Notes:
+			 *   ChildUserID is always ""
+			 *   FaceBookUserId is always null
+			 *   FacebookAccessToken is always ""
+			 *   LoginDuration is never set
+			 *   ExternalAuthProvider is always null
+			 *   ExternalUserID is always null
+			 *   ExternalAuthData is always null
+			 *   ClientIP is always null
+			 *   LoginHash is always null
+			 *
+			 *   UserPolicy is either null, or one where PrivacyPolicy and TermsAndConditions are accepted, i.e. it's useless
+			 *   Locale is hard-coded to en-US (wow guys, gg)
+			 *
+			 *   Conclusion: the only relevant data sent is the UserName and Password
+			 * */
+
+			String password = MainDBAccessor.getParentUserPassword(loginData.getUserName());
+			if (password == null) {
+				// TODO ? how does the client handle this?
+				ParentLoginInfo invalidUserNameResult = new ParentLoginInfo();
+				invalidUserNameResult.setUserName(loginData.getUserName());
+				invalidUserNameResult.setStatus(MembershipUserStatus.INVALID_USER_NAME);
+				respondXml(exchange, 404, invalidUserNameResult, "ParentLoginInfo", true);
+				return;
+			}
+
+			if (!password.equals(loginData.getPassword())) {
+				// TODO ? how does the client handle this?
+				ParentLoginInfo invalidPasswordResult = new ParentLoginInfo();
+				invalidPasswordResult.setUserName(loginData.getUserName());
+				invalidPasswordResult.setStatus(MembershipUserStatus.INVALID_PASSWORD);
+				respondXml(exchange, 401, invalidPasswordResult, "ParentLoginInfo", true);
+				return;
+			}
+
+			/*
+			 * Response-Notes:
+			 *   UserID is only used for IAP (to be removed) and PlayFab (TODO research)
+			 *   ChildList is only used for a single GuestLogin-check (TODO remove)
+			 *   Unauthorized and SendActivationReminder can be left null
+			 *
+			 *   relevant:
+			 *     UserName (nullable)
+			 *     ApiToken (nullable)
+			 *     Status
+			 * */
+
+			String ssoToken = SSOTokenManager.generateParentToken(loginData.getUserName());
+
 			ParentLoginInfo result = new ParentLoginInfo();
 			result.setUserName(loginData.getUserName());
-			result.setApiToken("TempToken"); // TODO
-			result.setUserID("TempID"); // TODO
-			result.setStatus(MembershipUserStatus.SUCCESS); // TODO
-			result.setSendActivationReminder(false); // TODO
-			result.setUnAuthorized(false); // TODO
-
-			UserLoginInfo firstChild = new UserLoginInfo();
-			firstChild.setUserName("FirstChildName"); // TODO
-			firstChild.setApiToken("TempToken1"); // TODO
-			firstChild.setUserID("TempID1"); // TODO
-			result.getChildList().add(firstChild);
-
-			UserLoginInfo secondChild = new UserLoginInfo();
-			secondChild.setUserName("SecondChildName"); // TODO
-			secondChild.setApiToken("TempToken2"); // TODO
-			secondChild.setUserID("TempID2"); // TODO
-			result.getChildList().add(secondChild);
+			result.setApiToken(ssoToken);
+			result.setUserID("TODOParentUserID"); // TODO
+			result.setStatus(MembershipUserStatus.SUCCESS);
 
 			respondXml(exchange, 200, result, "ParentLoginInfo", true);
-		} catch (JAXBException e) {
+		} catch (JAXBException | SQLException e) {
 			e.printStackTrace();
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
