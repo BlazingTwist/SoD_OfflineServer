@@ -15,8 +15,16 @@ import javax.crypto.spec.SecretKeySpec;
 public class TripleDes {
 	private static final String CRYPT_ALGORITHM = "DESede";
 	private static final String PADDING = "DESede/ECB/PKCS5Padding";
-	private static final String KEY = "F5D573D9-CDB3-4142-9462-F2A5DEF0B7E8";
-	private static final String KEY_ASCII = "C92EC1AA-54CD-4D0C-A8D5-403FCCF1C0BD";
+
+	/**
+	 * Secret key used for WsWebService
+	 */
+	public static final String KEY = "F5D573D9-CDB3-4142-9462-F2A5DEF0B7E8";
+
+	/**
+	 * Secret key used for the media-server DWADragonsMain.xml (defines Server URLs)
+	 */
+	public static final String KEY_ASCII = "C92EC1AA-54CD-4D0C-A8D5-403FCCF1C0BD";
 
 	private static byte[] getKeyHash() throws NoSuchAlgorithmException {
 		MessageDigest md5 = MessageDigest.getInstance("MD5");

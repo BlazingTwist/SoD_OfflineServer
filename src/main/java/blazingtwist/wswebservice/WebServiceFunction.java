@@ -19,6 +19,7 @@ public abstract class WebServiceFunction implements HttpHandler {
 	public static final String INVALID_PARAMS = "Received invalid Parameters";
 	public static final String INVALID_BODY = "Received invalid Body";
 	public static final String INTERNAL_ERROR = "Internal Server Error";
+	public static final String ERROR_INVALID_SIGNATURE = "Received invalid signature";
 
 	private final String contextName;
 
@@ -60,9 +61,9 @@ public abstract class WebServiceFunction implements HttpHandler {
 			}
 		}
 
-		try{
+		try {
 			this.handle(exchange, params, body);
-		}catch(Exception e){
+		} catch (Exception e) {
 			System.err.println("unhandled exception: " + e.toString());
 			e.printStackTrace();
 			respond(exchange, 500, INTERNAL_ERROR);
@@ -87,13 +88,13 @@ public abstract class WebServiceFunction implements HttpHandler {
 		}
 	}
 
-	public <T> void respondXml(HttpExchange exchange, int responseCode, T response, String rootName, boolean encrypt){
+	public <T> void respondXml(HttpExchange exchange, int responseCode, T response, String rootName, boolean encrypt) {
 		try {
-			String resultString = WebFunctionUtils.marshalXml(response, rootName, (Class<T>)response.getClass(), encrypt);
-			if(encrypt){
+			String resultString = WebFunctionUtils.marshalXml(response, rootName, (Class<T>) response.getClass(), encrypt);
+			if (encrypt) {
 				resultString = WebFunctionUtils.marshalXml(TripleDes.encrypt(resultString), "string", String.class, false);
 			}
-			respond(exchange, 200, resultString);
+			respond(exchange, responseCode, resultString);
 		} catch (JAXBException e) {
 			e.printStackTrace();
 			respond(exchange, 500, INTERNAL_ERROR);

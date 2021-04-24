@@ -37,6 +37,7 @@ public class WebFunctionUtils {
 
 		for (K key : keys) {
 			if (!map.containsKey(key)) {
+				System.out.println("missing key: " + key);
 				return false;
 			}
 		}
