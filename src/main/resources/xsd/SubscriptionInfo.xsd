@@ -7,25 +7,10 @@
 
     <xsi:complexType name="SubscriptionInfo">
         <xsi:sequence>
-            <xsi:element maxOccurs="1" minOccurs="0" name="BillFrequency" type="xsd:short"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="CardExpirationDate" type="xsd:dateTime"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="CardReferenceNumber" type="xsd:string"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="IsActive" type="xsd:boolean"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="LastBillDate" type="xsd:dateTime"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="MembershipID" type="xsd:int"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ProfileCurrency" type="xsd:string"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ProfileID" type="xsd:string"/>
             <xsi:element maxOccurs="1" minOccurs="0" name="Recurring" type="xsd:boolean"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="RecurringAmount" type="xsd:float"/>
             <xsi:element maxOccurs="1" minOccurs="1" name="Status" type="xsd:string"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="SubscriptionDisplayName" type="xsd:string"/>
             <xsi:element maxOccurs="1" minOccurs="0" name="SubscriptionEndDate" type="xsd:dateTime"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="SubscriptionID" type="xsd:int"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="SubscriptionPlanID" type="xsd:int"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="SubscriptionProvider" type="UserSubscriptionProvider"/>
             <xsi:element maxOccurs="1" minOccurs="0" name="SubscriptionTypeID" type="xsd:int"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="UserID" type="xsd:string"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="UserSubscriptionNotification" type="SubscriptionNotification"/>
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

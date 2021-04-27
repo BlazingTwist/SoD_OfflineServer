@@ -1,4 +1,4 @@
-package blazingtwist.wswebservice;
+package blazingtwist.database;
 
 public class SSOTokenInfo {
 	public String token;

@@ -3,6 +3,7 @@ package blazingtwist.wswebservice.functions;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
+import generated.CommonInventoryData;
 import java.util.Map;
 
 public class GetCommonInventoryData extends WebServiceFunction {
@@ -18,5 +19,7 @@ public class GetCommonInventoryData extends WebServiceFunction {
 		// * apiToken | apiKey | getCommonInventoryRequestXml
 
 		// TODO
+		CommonInventoryData inventoryData = new CommonInventoryData();
+		respondXml(exchange, 200, inventoryData, "CI", false);
 	}
 }

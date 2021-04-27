@@ -100,4 +100,14 @@ public abstract class WebServiceFunction implements HttpHandler {
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}
+
+	public void respondEncryptedString(HttpExchange exchange, int responseCode, String response){
+		try {
+			String resultString = WebFunctionUtils.marshalXml(TripleDes.encrypt(response), "string", String.class, false);
+			respond(exchange, responseCode, resultString);
+		} catch (JAXBException e) {
+			e.printStackTrace();
+			respond(exchange, 500, INTERNAL_ERROR);
+		}
+	}
 }

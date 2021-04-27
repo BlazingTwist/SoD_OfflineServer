@@ -1,0 +1,1292 @@
+<ArrayOfUserRank xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <UserRank>
+        <Name xmlns="">Novice Adventurer 1</Name>
+        <Value xmlns="">0</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">284</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Novice Adventurer 2</Name>
+        <Value xmlns="">5</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">376</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Novice Adventurer 3</Name>
+        <Value xmlns="">15</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">377</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Novice Adventurer 4</Name>
+        <Value xmlns="">25</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">378</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Novice Adventurer 5</Name>
+        <Value xmlns="">35</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">379</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Prodigy 1</Name>
+        <Value xmlns="">45</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">380</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Prodigy 2</Name>
+        <Value xmlns="">50</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">285</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Prodigy 3</Name>
+        <Value xmlns="">150</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">286</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Prodigy 4</Name>
+        <Value xmlns="">300</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">287</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Prodigy 5</Name>
+        <Value xmlns="">600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">288</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Greenhorn Explorer 1</Name>
+        <Value xmlns="">1000</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">289</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Greenhorn Explorer 2</Name>
+        <Value xmlns="">1500</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">290</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Greenhorn Explorer 3</Name>
+        <Value xmlns="">2100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">291</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Greenhorn Explorer 4</Name>
+        <Value xmlns="">2800</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">292</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Greenhorn Explorer 5</Name>
+        <Value xmlns="">3600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">293</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Potential Star 1</Name>
+        <Value xmlns="">4500</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">294</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Potential Star 2</Name>
+        <Value xmlns="">5400</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">295</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Potential Star 3</Name>
+        <Value xmlns="">6300</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">296</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Potential Star 4</Name>
+        <Value xmlns="">7200</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">297</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Potential Star 5</Name>
+        <Value xmlns="">8100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">298</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Mighty Pathfinder 1</Name>
+        <Value xmlns="">9100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">299</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Mighty Pathfinder 2</Name>
+        <Value xmlns="">10100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">300</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Mighty Pathfinder 3</Name>
+        <Value xmlns="">11100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">301</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Mighty Pathfinder 4</Name>
+        <Value xmlns="">12100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">302</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Mighty Pathfinder 5</Name>
+        <Value xmlns="">13100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">303</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Clever Pioneer 1</Name>
+        <Value xmlns="">14200</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">304</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Clever Pioneer 2</Name>
+        <Value xmlns="">15300</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">305</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Clever Pioneer 3</Name>
+        <Value xmlns="">16400</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">306</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Clever Pioneer 4</Name>
+        <Value xmlns="">17500</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">307</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Clever Pioneer 5</Name>
+        <Value xmlns="">18600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">308</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Brave Trailblazer 1</Name>
+        <Value xmlns="">19800</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">309</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Brave Trailblazer 2</Name>
+        <Value xmlns="">21000</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">310</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Brave Trailblazer 3</Name>
+        <Value xmlns="">22200</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">311</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Brave Trailblazer 4</Name>
+        <Value xmlns="">23400</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">312</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Tremendous Viking Hero</Name>
+        <Value xmlns="">24600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">313</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 36</Name>
+        <Value xmlns="">25900</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">563</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 37</Name>
+        <Value xmlns="">27200</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">564</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 38</Name>
+        <Value xmlns="">28500</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">565</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 39</Name>
+        <Value xmlns="">29800</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">566</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 40</Name>
+        <Value xmlns="">31100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">567</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 41</Name>
+        <Value xmlns="">32500</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">568</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 42</Name>
+        <Value xmlns="">33900</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">569</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 43</Name>
+        <Value xmlns="">35300</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">570</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 44</Name>
+        <Value xmlns="">35700</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">571</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 45</Name>
+        <Value xmlns="">38100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">572</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 46</Name>
+        <Value xmlns="">39600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">573</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 47</Name>
+        <Value xmlns="">41100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">574</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 48</Name>
+        <Value xmlns="">42600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">575</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 49</Name>
+        <Value xmlns="">44100</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">576</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 50</Name>
+        <Value xmlns="">45600</Value>
+        <PointTypeID xmlns="">1</PointTypeID>
+        <GlobalRankID xmlns="">577</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 1</Name>
+        <Value xmlns="">0</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">194</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 2</Name>
+        <Value xmlns="">25</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">195</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 3</Name>
+        <Value xmlns="">50</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">196</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 4</Name>
+        <Value xmlns="">100</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">197</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 5</Name>
+        <Value xmlns="">200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">198</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 6</Name>
+        <Value xmlns="">300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">199</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 7</Name>
+        <Value xmlns="">450</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">200</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 9</Name>
+        <Value xmlns="">750</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">202</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 10</Name>
+        <Value xmlns="">900</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">203</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 8</Name>
+        <Value xmlns="">900</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">201</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 11</Name>
+        <Value xmlns="">1100</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">204</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 12</Name>
+        <Value xmlns="">1300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">205</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 13</Name>
+        <Value xmlns="">1500</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">206</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 14</Name>
+        <Value xmlns="">1700</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">207</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 15</Name>
+        <Value xmlns="">2000</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">208</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 16</Name>
+        <Value xmlns="">2300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">209</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 17</Name>
+        <Value xmlns="">2600</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">210</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 18</Name>
+        <Value xmlns="">3000</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">211</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 19</Name>
+        <Value xmlns="">3400</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">212</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 20</Name>
+        <Value xmlns="">3800</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">213</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 21</Name>
+        <Value xmlns="">4200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">214</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 22</Name>
+        <Value xmlns="">4700</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">215</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 23</Name>
+        <Value xmlns="">5200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">216</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 24</Name>
+        <Value xmlns="">5700</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">217</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 27</Name>
+        <Value xmlns="">7500</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">220</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 28</Name>
+        <Value xmlns="">8200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">221</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 29</Name>
+        <Value xmlns="">8900</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">222</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 25</Name>
+        <Value xmlns="">9300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">218</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 30</Name>
+        <Value xmlns="">9600</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">223</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 26</Name>
+        <Value xmlns="">9900</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">219</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 31</Name>
+        <Value xmlns="">10300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">224</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 32</Name>
+        <Value xmlns="">11000</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">225</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 33</Name>
+        <Value xmlns="">11800</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">226</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 34</Name>
+        <Value xmlns="">12600</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">227</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 35</Name>
+        <Value xmlns="">13400</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">228</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 36</Name>
+        <Value xmlns="">14300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">229</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 37</Name>
+        <Value xmlns="">15200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">230</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 38</Name>
+        <Value xmlns="">16200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">231</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 39</Name>
+        <Value xmlns="">17200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">232</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 40</Name>
+        <Value xmlns="">18200</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">233</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 41</Name>
+        <Value xmlns="">19300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">234</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 42</Name>
+        <Value xmlns="">20400</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">235</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 43</Name>
+        <Value xmlns="">21500</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">236</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 44</Name>
+        <Value xmlns="">22700</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">237</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 45</Name>
+        <Value xmlns="">23900</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">238</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 46</Name>
+        <Value xmlns="">25100</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">239</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 47</Name>
+        <Value xmlns="">26300</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">240</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 48</Name>
+        <Value xmlns="">27500</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">241</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 49</Name>
+        <Value xmlns="">28700</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">242</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Terror Rank 50</Name>
+        <Value xmlns="">30000</Value>
+        <PointTypeID xmlns="">4</PointTypeID>
+        <GlobalRankID xmlns="">243</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Tiny Tooth Buddy 1</Name>
+        <Value xmlns="">0</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">254</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Tiny Tooth Buddy 2</Name>
+        <Value xmlns="">50</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">255</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Tiny Tooth Buddy 3</Name>
+        <Value xmlns="">150</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">256</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Tiny Tooth Buddy 4</Name>
+        <Value xmlns="">300</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">257</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Tiny Tooth Buddy 5</Name>
+        <Value xmlns="">600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">258</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Short Wing Pal 1</Name>
+        <Value xmlns="">1000</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">259</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Short Wing Pal 2</Name>
+        <Value xmlns="">1500</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">260</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Short Wing Pal 3</Name>
+        <Value xmlns="">2100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">261</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Short Wing Pal 4</Name>
+        <Value xmlns="">2800</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">262</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Short Wing Pal 5</Name>
+        <Value xmlns="">3600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">263</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Dragon Tamer 1</Name>
+        <Value xmlns="">4500</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">264</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Dragon Tamer 2</Name>
+        <Value xmlns="">5400</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">265</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Dragon Tamer 3</Name>
+        <Value xmlns="">6300</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">266</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Dragon Tamer 4</Name>
+        <Value xmlns="">7200</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">267</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Promising Dragon Tamer 5</Name>
+        <Value xmlns="">8100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">268</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Broad Wing Partner 1</Name>
+        <Value xmlns="">9100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">269</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Broad Wing Partner 2</Name>
+        <Value xmlns="">10100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">270</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Broad Wing Partner 3</Name>
+        <Value xmlns="">11100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">271</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Broad Wing Partner 4</Name>
+        <Value xmlns="">12100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">272</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Broad Wing Partner 5</Name>
+        <Value xmlns="">13100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">273</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Companion 1</Name>
+        <Value xmlns="">14200</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">274</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Companion 2</Name>
+        <Value xmlns="">15300</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">275</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Companion 3</Name>
+        <Value xmlns="">16400</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">276</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Companion 4</Name>
+        <Value xmlns="">17500</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">277</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Companion 5</Name>
+        <Value xmlns="">18600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">278</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Whisperer 1</Name>
+        <Value xmlns="">19800</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">279</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Whisperer 2</Name>
+        <Value xmlns="">21000</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">280</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Whisperer 3</Name>
+        <Value xmlns="">22200</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">281</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon Whisperer 4</Name>
+        <Value xmlns="">23400</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">282</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Dragon's Best Friend</Name>
+        <Value xmlns="">24600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">283</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 31</Name>
+        <Value xmlns="">25900</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">578</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 32</Name>
+        <Value xmlns="">27200</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">579</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 33</Name>
+        <Value xmlns="">28500</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">580</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 34</Name>
+        <Value xmlns="">29800</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">581</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 35</Name>
+        <Value xmlns="">31100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">582</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 36</Name>
+        <Value xmlns="">32500</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">583</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 37</Name>
+        <Value xmlns="">33900</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">584</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 38</Name>
+        <Value xmlns="">35300</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">585</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 39</Name>
+        <Value xmlns="">36700</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">586</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 40</Name>
+        <Value xmlns="">38100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">587</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 41</Name>
+        <Value xmlns="">39600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">588</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 42</Name>
+        <Value xmlns="">41100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">589</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 43</Name>
+        <Value xmlns="">42600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">590</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 44</Name>
+        <Value xmlns="">44100</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">591</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 45</Name>
+        <Value xmlns="">45600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">592</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 46</Name>
+        <Value xmlns="">47200</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">593</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 47</Name>
+        <Value xmlns="">48800</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">594</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 48</Name>
+        <Value xmlns="">50400</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">595</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 49</Name>
+        <Value xmlns="">52000</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">596</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Rank 50</Name>
+        <Value xmlns="">53600</Value>
+        <PointTypeID xmlns="">8</PointTypeID>
+        <GlobalRankID xmlns="">597</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">A Helping Hand 1</Name>
+        <Value xmlns="">0</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">314</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">A Helping Hand 2</Name>
+        <Value xmlns="">25</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">315</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">A Helping Hand 3</Name>
+        <Value xmlns="">55</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">316</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">A Helping Hand 4</Name>
+        <Value xmlns="">95</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">317</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">A Helping Hand 5</Name>
+        <Value xmlns="">150</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">318</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Farmhand 1</Name>
+        <Value xmlns="">300</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">319</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Farmhand 2</Name>
+        <Value xmlns="">600</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">320</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Farmhand 3</Name>
+        <Value xmlns="">900</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">321</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Farmhand 4</Name>
+        <Value xmlns="">1300</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">322</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Farmhand 5</Name>
+        <Value xmlns="">1800</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">323</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Enthusiastic Gardener 1</Name>
+        <Value xmlns="">2400</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">324</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Enthusiastic Gardener 2</Name>
+        <Value xmlns="">3100</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">325</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Enthusiastic Gardener 3</Name>
+        <Value xmlns="">3900</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">326</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Enthusiastic Gardener 4</Name>
+        <Value xmlns="">4800</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">327</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Enthusiastic Gardener 5</Name>
+        <Value xmlns="">5800</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">328</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Skilled Farmer 1</Name>
+        <Value xmlns="">7000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">329</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Skilled Farmer 2</Name>
+        <Value xmlns="">8400</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">330</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Skilled Farmer 3</Name>
+        <Value xmlns="">10000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">331</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Skilled Farmer 4</Name>
+        <Value xmlns="">12000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">332</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Skilled Farmer 5</Name>
+        <Value xmlns="">15000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">333</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Expert Botanist 1</Name>
+        <Value xmlns="">19000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">334</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Expert Botanist 2</Name>
+        <Value xmlns="">24000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">335</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Expert Botanist 3</Name>
+        <Value xmlns="">30000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">336</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Expert Botanist 4</Name>
+        <Value xmlns="">37000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">337</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Expert Botanist 5</Name>
+        <Value xmlns="">45000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">338</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Horticultural Specialist 1</Name>
+        <Value xmlns="">54000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">339</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Horticultural Specialist 2</Name>
+        <Value xmlns="">64000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">340</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Horticultural Specialist 3</Name>
+        <Value xmlns="">75000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">341</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Horticultural Specialist 4</Name>
+        <Value xmlns="">87000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">342</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Agricultural Master</Name>
+        <Value xmlns="">100000</Value>
+        <PointTypeID xmlns="">9</PointTypeID>
+        <GlobalRankID xmlns="">343</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Amateur Angler 1</Name>
+        <Value xmlns="">0</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">344</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Amateur Angler 2</Name>
+        <Value xmlns="">50</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">345</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Amateur Angler 3</Name>
+        <Value xmlns="">150</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">346</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Amateur Angler 4</Name>
+        <Value xmlns="">300</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">347</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Amateur Angler 5</Name>
+        <Value xmlns="">600</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">348</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Cod Catcher 1</Name>
+        <Value xmlns="">1000</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">349</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Cod Catcher 2</Name>
+        <Value xmlns="">1500</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">350</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Cod Catcher 3</Name>
+        <Value xmlns="">2100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">351</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Cod Catcher 4</Name>
+        <Value xmlns="">2800</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">352</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Cod Catcher 5</Name>
+        <Value xmlns="">3600</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">353</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Journeyman Fisher 1</Name>
+        <Value xmlns="">4500</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">354</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Journeyman Fisher 2</Name>
+        <Value xmlns="">5400</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">355</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Journeyman Fisher 3</Name>
+        <Value xmlns="">6300</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">356</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Journeyman Fisher 4</Name>
+        <Value xmlns="">7200</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">357</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Journeyman Fisher 5</Name>
+        <Value xmlns="">8100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">358</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Pro Fisherman 1</Name>
+        <Value xmlns="">9100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">359</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Pro Fisherman 2</Name>
+        <Value xmlns="">10100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">360</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Pro Fisherman 3</Name>
+        <Value xmlns="">11100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">361</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Pro Fisherman 4</Name>
+        <Value xmlns="">12100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">362</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Pro Fisherman 5</Name>
+        <Value xmlns="">13100</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">363</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Casting Champion 1</Name>
+        <Value xmlns="">14200</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">364</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Casting Champion 2</Name>
+        <Value xmlns="">15300</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">365</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Casting Champion 3</Name>
+        <Value xmlns="">16400</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">366</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Casting Champion 4</Name>
+        <Value xmlns="">17500</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">367</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Casting Champion 5</Name>
+        <Value xmlns="">18600</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">368</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Astonishing Hunter 1</Name>
+        <Value xmlns="">19800</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">369</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Astonishing Hunter 2</Name>
+        <Value xmlns="">21000</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">370</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Astonishing Hunter 3</Name>
+        <Value xmlns="">22200</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">371</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Astonishing Hunter 4</Name>
+        <Value xmlns="">23400</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">372</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Reeled Them All!</Name>
+        <Value xmlns="">24600</Value>
+        <PointTypeID xmlns="">10</PointTypeID>
+        <GlobalRankID xmlns="">373</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Ultimate Dragon Trainer1</Name>
+        <Value xmlns="">1</Value>
+        <PointTypeID xmlns="">12</PointTypeID>
+        <GlobalRankID xmlns="">375</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Freshman Dragon Trainer</Name>
+        <Value xmlns="">10000</Value>
+        <PointTypeID xmlns="">12</PointTypeID>
+        <GlobalRankID xmlns="">381</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Junior Dragon Trainer</Name>
+        <Value xmlns="">43000</Value>
+        <PointTypeID xmlns="">12</PointTypeID>
+        <GlobalRankID xmlns="">398</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Senior Dragon Trainer</Name>
+        <Value xmlns="">100000</Value>
+        <PointTypeID xmlns="">12</PointTypeID>
+        <GlobalRankID xmlns="">399</GlobalRankID>
+    </UserRank>
+    <UserRank>
+        <Name xmlns="">Ultimate Dragon Trainer2</Name>
+        <Value xmlns="">400000</Value>
+        <PointTypeID xmlns="">12</PointTypeID>
+        <GlobalRankID xmlns="">400</GlobalRankID>
+    </UserRank>
+</ArrayOfUserRank>

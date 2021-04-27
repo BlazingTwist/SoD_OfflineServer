@@ -8,17 +8,9 @@
     <xsi:complexType name="AvatarData">
         <xsi:sequence>
             <xsi:element maxOccurs="1" minOccurs="0" name="IsSuggestedAvatarName" type="xsd:boolean"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="Id" type="xsd:int"/>
             <xsi:element maxOccurs="1" minOccurs="0" name="DisplayName" type="xsd:string"/>
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="Part" type="AvatarDataPart"/>
             <xsi:element maxOccurs="1" minOccurs="1" name="Gender" type="Gender"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="UTD" type="xsd:boolean">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="userNameToDisplayName"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

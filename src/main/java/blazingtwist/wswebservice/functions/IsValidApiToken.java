@@ -1,7 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.wswebservice.SSOTokenInfo;
+import blazingtwist.database.SSOTokenInfo;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;

@@ -40,13 +40,6 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="Game" type="GameDataSummary">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="gameInfo"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="0" name="gc" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -61,23 +54,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="BuddyCount" type="xsd:int"/>
-            <xsi:element maxOccurs="1" minOccurs="0" name="ActivityCount" type="xsd:int"/>
             <xsi:element maxOccurs="unbounded" minOccurs="0" name="Groups" type="UserProfileGroupData"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="UPT" type="UserProfileTag">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="userProfileTag"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="UG" type="UserGrade">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="userGradeData"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

@@ -86,7 +86,7 @@ public class LoginParent extends WebServiceFunction {
 			ParentLoginInfo result = new ParentLoginInfo();
 			result.setUserName(loginData.getUserName());
 			result.setApiToken(ssoToken);
-			result.setUserID("TODOParentUserID"); // TODO
+			result.setUserID(loginData.getUserName());
 			result.setStatus(MembershipUserStatus.SUCCESS);
 
 			respondXml(exchange, 200, result, "ParentLoginInfo", true);

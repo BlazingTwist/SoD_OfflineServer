@@ -23,7 +23,6 @@ public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
 
 	private JAXBElement<AvatarDisplayData> buildResponse(){
 		AvatarData avatarData = new AvatarData();
-		avatarData.setId(72199228);
 		avatarData.setDisplayName("BlazingTwist");
 		avatarData.setGender(Gender.unknown);
 		AvatarDataPart avatarDataPart = new AvatarDataPart();
@@ -37,8 +36,6 @@ public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
 
 		avatarDataPart.setUserInventoryID(740462370);
 		avatarData.getPart().add(avatarDataPart);
-		avatarData.setUserNameToDisplayName(null);
-		avatarData.setIsSuggestedAvatarName(null);
 
 		AvatarDisplayData avatarDisplayData = new AvatarDisplayData();
 		avatarDisplayData.setAvatarData(avatarData);

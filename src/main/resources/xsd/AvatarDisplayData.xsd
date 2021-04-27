@@ -13,10 +13,8 @@
             <xsi:element maxOccurs="1" minOccurs="0" name="AvatarData" type="AvatarData"/>
             <xsi:element maxOccurs="1" minOccurs="1" name="UserInfo" type="UserInfo"/>
             <xsi:element maxOccurs="1" minOccurs="1" name="UserSubscriptionInfo" type="UserSubscriptionInfo"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="AchievementInfo" type="UserAchievementInfo"/>
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="Achievements" type="UserAchievementInfo"/>
             <xsi:element maxOccurs="unbounded" minOccurs="0" name="RewardMultipliers" type="RewardMultiplier"/>
-            <xsi:element maxOccurs="1" minOccurs="1" name="RankID" type="xsd:int"/>
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

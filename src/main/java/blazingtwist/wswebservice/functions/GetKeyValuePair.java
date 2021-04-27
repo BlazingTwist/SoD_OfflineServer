@@ -13,6 +13,7 @@ public class GetKeyValuePair extends WebServiceFunction {
 
 	@Override
 	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
-		// TODO
+		// TODO to be honest, I have no clue just how many things are tied to this, so we'll keep it null for now
+		respond(exchange, 200, "");
 	}
 }

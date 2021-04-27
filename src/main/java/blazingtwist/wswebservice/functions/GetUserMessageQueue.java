@@ -3,6 +3,7 @@ package blazingtwist.wswebservice.functions;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
 import com.sun.net.httpserver.HttpExchange;
+import generated.ArrayOfMessageInfo;
 import generated.MessageInfo;
 import java.util.Map;
 
@@ -14,6 +15,15 @@ public class GetUserMessageQueue extends WebServiceFunction {
 
 	@Override
 	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
+		/*
+		* unused:
+		*   MessageTypeName
+		*   NonMemberMessage
+		*   NonMemberImageUrl
+		*   MemberLinkUrl
+		*   NonMemberLinkUrl
+		* */
+
 		// used for sending system messages, such as being kicked from a clan
 		// will be displayed in chat
 
@@ -30,6 +40,11 @@ public class GetUserMessageQueue extends WebServiceFunction {
 		*/
 		message.setMessageTypeID(4); // TODO
 
-		// TODO
+		message.setMemberMessage("[[Line1]]=[[Take a look at that, you've received a test-message from my server!]]");
+
+		ArrayOfMessageInfo messageInfo = new ArrayOfMessageInfo();
+		messageInfo.getMessageInfo().add(message);
+
+		respondXml(exchange, 200, messageInfo, "ArrayOfMessageInfo", false);
 	}
 }
