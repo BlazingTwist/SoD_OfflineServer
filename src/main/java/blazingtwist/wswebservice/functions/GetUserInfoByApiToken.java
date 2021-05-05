@@ -1,7 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.SSOTokenInfo;
+import blazingtwist.database.SSOParentTokenInfo;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
@@ -39,7 +39,7 @@ public class GetUserInfoByApiToken extends WebServiceFunction {
 		 *   UserID | ParentUserID | Username | MultiplayerEnabled | BirthDate | GenderID | Age | OpenChatEnabled | CreationDate
 		 * */
 
-		SSOTokenInfo parentTokenInfo = null;
+		SSOParentTokenInfo parentTokenInfo = null;
 		try {
 			parentTokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_API_TOKEN));
 		} catch (SQLException throwables) {
@@ -50,9 +50,9 @@ public class GetUserInfoByApiToken extends WebServiceFunction {
 		if (parentTokenInfo != null) {
 			if (!parentTokenInfo.isExpired) {
 				// For ParentUsers, ParentID and UserID are identical
-				result.setUserID(parentTokenInfo.userName);
-				result.setParentUserID(parentTokenInfo.userName);
-				result.setUsername(parentTokenInfo.userName);
+				result.setUserID(parentTokenInfo.parentUserInfo.userID);
+				result.setParentUserID(parentTokenInfo.parentUserInfo.userID);
+				result.setUsername(parentTokenInfo.parentUserInfo.userName);
 				result.setAge(25);
 
 				result.setMultiplayerEnabled(true); // ParentUsers can't join games either way

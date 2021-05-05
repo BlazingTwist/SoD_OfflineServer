@@ -41,4 +41,15 @@ public class WebDataUtils {
 		result.setSubscriptionEndDate(getNextYearDate());
 		return result;
 	}
+
+	public static XMLGregorianCalendar getXmlCalendar(Instant instant){
+		try{
+			GregorianCalendar calendar = new GregorianCalendar();
+			calendar.setTime(Date.from(instant));
+			return DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
+		} catch (DatatypeConfigurationException e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
 }

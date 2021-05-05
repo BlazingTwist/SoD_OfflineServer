@@ -27,12 +27,12 @@ public class IsValidApiToken extends WebServiceFunction {
 		}
 
 		try {
-			SSOTokenInfo tokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_API_TOKEN));
+			SSOTokenInfo tokenInfo = MainDBAccessor.getSSOTokenInfo(body.get(PARAM_API_TOKEN));
 			ApiTokenStatus status;
 			if (tokenInfo == null) {
 				status = ApiTokenStatus.TokenNotFound;
-			} else if (tokenInfo.isExpired) {
-				status = tokenInfo.isExpiredByLogin
+			} else if (tokenInfo.getExpired()) {
+				status = tokenInfo.getExpiredByLogin()
 						? ApiTokenStatus.UserLoggedInFromAnotherLocation
 						: ApiTokenStatus.TokenExpired;
 			} else {

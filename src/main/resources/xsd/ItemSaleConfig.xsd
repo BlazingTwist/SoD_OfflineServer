@@ -4,27 +4,6 @@
 
     <xsi:complexType name="ItemSaleConfig">
         <xsi:sequence>
-            <xsi:element maxOccurs="1" minOccurs="0" name="IID" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="itemID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="CID" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="categoryID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="RID" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="rarityID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="1" name="QTY" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>

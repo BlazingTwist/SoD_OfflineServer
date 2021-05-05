@@ -12,20 +12,6 @@
 
     <xsi:complexType name="RaisedPetData">
         <xsi:sequence>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ispetcreated" type="xsd:boolean">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="IsPetCreated"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="validationmessage" type="xsd:string">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="ValidationMessage"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -140,24 +126,10 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ir" type="xsd:boolean">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="IsReleased"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="1" name="cdt" type="xsd:dateTime">
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="CreateDate"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="updt" type="xsd:dateTime">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="UpdateDate"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>

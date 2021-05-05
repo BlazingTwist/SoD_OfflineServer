@@ -17,6 +17,7 @@
 
     <xsi:complexType name="ItemData">
         <xsi:sequence>
+            <!-- TODO super jank, for farm items only, please remove -->
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="is" type="ItemState">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -24,13 +25,16 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="ir" type="ItemRarity">
+
+            <!-- TODO default value is assume to be 'Common', please relocate that logic to the server instead -->
+            <xsi:element maxOccurs="1" minOccurs="1" name="ir" type="ItemRarity">
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="itemRarity"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="0" name="ipsm" type="ItemPossibleStatsMap">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -175,20 +179,6 @@
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="relationship"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="s" type="xsd:boolean">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="stackable"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="as" type="xsd:boolean">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="allowStacking"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>

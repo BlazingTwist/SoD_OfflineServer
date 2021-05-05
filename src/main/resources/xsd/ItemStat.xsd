@@ -2,8 +2,6 @@
 <xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <xsi:include schemaLocation="DataTypeInfo.xsd"/>
-
     <xsi:complexType name="ItemStat">
         <xsi:sequence>
             <xsi:element maxOccurs="1" minOccurs="1" name="ID" type="xsd:int">
@@ -24,13 +22,6 @@
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="value"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="DTI" type="DataTypeInfo">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="dataType"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>

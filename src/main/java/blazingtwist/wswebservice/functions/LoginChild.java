@@ -4,7 +4,7 @@ import blazingtwist.crypto.MD5;
 import blazingtwist.crypto.TripleDes;
 import blazingtwist.database.ChildUserInfo;
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.SSOTokenInfo;
+import blazingtwist.database.SSOParentTokenInfo;
 import blazingtwist.wswebservice.SSOTokenManager;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -49,7 +49,7 @@ public class LoginChild extends WebServiceFunction {
 		System.out.println("ChildUserID: " + childUserId);
 
 		try {
-			SSOTokenInfo ssoParentTokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_PARENT_API_TOKEN));
+			SSOParentTokenInfo ssoParentTokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_PARENT_API_TOKEN));
 			if (ssoParentTokenInfo == null || ssoParentTokenInfo.isExpired) {
 				respond(exchange, 401, "Token is expired!");
 				return;
@@ -60,13 +60,13 @@ public class LoginChild extends WebServiceFunction {
 				respond(exchange, 401, "Invalid ChildUserID");
 				return;
 			}
-			if (!childUserInfo.parentUserName.equals(ssoParentTokenInfo.userName)) {
-				System.out.println("parent: " + ssoParentTokenInfo.userName + " tried logging into child: " + childUserId + " of parent: " + childUserInfo.parentUserName);
+			if (!childUserInfo.parentUserInfo.userName.equals(ssoParentTokenInfo.parentUserInfo.userName)) {
+				System.out.println("parent: " + ssoParentTokenInfo.parentUserInfo.userName + " tried logging into child: " + childUserId + " of parent: " + childUserInfo.parentUserInfo.userName);
 				respond(exchange, 401, "Invalid ChildUserID");
 				return;
 			}
 
-			String ssoToken = SSOTokenManager.generateChildToken(childUserId);
+			String ssoToken = SSOTokenManager.generateChildToken(childUserInfo.userName);
 			respondEncryptedString(exchange, 200, ssoToken);
 		} catch (SQLException throwables) {
 			throwables.printStackTrace();

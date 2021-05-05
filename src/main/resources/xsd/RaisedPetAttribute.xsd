@@ -2,8 +2,6 @@
 <xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="4.1.0"
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
-    <xsi:include schemaLocation="DataType.xsd"/>
-
     <xsi:complexType name="RaisedPetAttribute">
         <xsi:sequence>
             <xsi:element maxOccurs="1" minOccurs="1" name="k" type="xsd:string">
@@ -17,13 +15,6 @@
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="Value"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="dt" type="DataType">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="Type"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>

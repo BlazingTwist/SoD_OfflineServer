@@ -37,7 +37,7 @@ public abstract class WebServiceFunction implements HttpHandler {
 		String[] uriSplit = requestURI.split("\\?");
 		Map<String, String> params = null;
 		if (uriSplit.length == 2) {
-			params = WebFunctionUtils.readUrlMap(uriSplit[1]);
+			params = WebFunctionUtils.readUrlMap(uriSplit[1].replace('\r', ' '));
 
 			System.out.println("Called " + contextName + " with params: ");
 			for (Map.Entry<String, String> paramEntry : params.entrySet()) {
@@ -51,7 +51,9 @@ public abstract class WebServiceFunction implements HttpHandler {
 		if (contentLength > 0) {
 			if (WWW_FORM_URL_ENCODED.equalsIgnoreCase(exchange.getRequestHeaders().getFirst(CONTENT_TYPE))) {
 				byte[] dataBytes = exchange.getRequestBody().readAllBytes();
-				String dataString = URLDecoder.decode(new String(dataBytes), StandardCharsets.UTF_8);
+				String urlEncodedData = new String(dataBytes, StandardCharsets.UTF_8);
+				String dataString = URLDecoder.decode(urlEncodedData, StandardCharsets.UTF_8);
+				dataString = dataString.replace('\r', ' ');
 				body = WebFunctionUtils.readUrlMap(dataString);
 
 				System.out.println("Called " + contextName + " with body: ");

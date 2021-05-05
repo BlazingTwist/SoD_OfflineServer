@@ -4,31 +4,10 @@
 
     <xsi:complexType name="RaisedPetGrowthState">
         <xsi:sequence>
-            <xsi:element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="GrowthStateID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="1" name="n" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="Name"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ptid" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="PetTypeID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="o" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="Order"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>

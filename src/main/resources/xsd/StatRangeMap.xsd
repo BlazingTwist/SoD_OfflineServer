@@ -4,20 +4,6 @@
 
     <xsi:complexType name="StatRangeMap">
         <xsi:sequence>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ISID" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="itemStatsID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ISN" type="xsd:string">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="itemStatsName"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="1" name="ITID" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>

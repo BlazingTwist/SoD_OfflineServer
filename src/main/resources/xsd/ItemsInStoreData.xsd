@@ -15,20 +15,6 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="s" type="xsd:string">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="StoreName"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="d" type="xsd:string">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="Description"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
             <xsi:element maxOccurs="unbounded" minOccurs="0" name="is" type="ItemData">
                 <xsi:annotation>
                     <xsi:appinfo>

@@ -48,7 +48,7 @@ public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
 
 	@Override
 	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
-		// TODO
+		// TODO garbage test code
 
 		try {
 			JAXBContext contextObject = JAXBContext.newInstance(AvatarDisplayData.class);

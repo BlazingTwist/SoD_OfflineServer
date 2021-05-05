@@ -1,6 +1,7 @@
 package blazingtwist.database;
 
 import blazingtwist.config.sql.SQLConfig;
+import blazingtwist.crypto.MD5;
 import generated.Gender;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -37,60 +38,85 @@ public class MainDBAccessor {
 		}
 	}
 
+	public static String buildGUID(String text) {
+		String hash = MD5.getUnicodeHashHex(text);
+		return hash.substring(0, 8) + "-" + hash.substring(8, 12) + "-" + hash.substring(12, 16) + "-" + hash.substring(16, 20) + "-" + hash.substring(20);
+	}
+
 	public static void addParentUser(String userName, String password) throws SQLException {
-		PreparedStatement statement = mainDBConnection.prepareStatement("insert into ParentUsers (UserName, Password) values(?, ?)");
+		PreparedStatement statement = mainDBConnection.prepareStatement("insert into ParentUsers (UserName, UserID, Password) values(?, ?, ?)");
 		statement.setString(1, userName);
-		statement.setString(2, password);
+		statement.setString(2, buildGUID(userName));
+		statement.setString(3, password);
 		statement.executeUpdate();
 		statement.close();
 	}
 
-	public static String getParentUserPassword(String userName) throws SQLException {
-		String password = null;
-		PreparedStatement statement = mainDBConnection.prepareStatement("select Password from ParentUsers where UserName = ?");
-		statement.setString(1, userName);
-		ResultSet resultSet = statement.executeQuery();
-		if (resultSet.next()) {
-			password = resultSet.getString("Password");
+	/**
+	 * @param key either ParentUserName or ParentUserID
+	 */
+	public static ParentUserInfo getParentUserInfo(String key) {
+		ParentUserInfo userInfo = null;
+		try {
+			PreparedStatement statement = mainDBConnection.prepareStatement("select UserName, UserID, Password from ParentUsers where (UserName = ?) or (UserID = ?)");
+			statement.setString(1, key);
+			statement.setString(2, key);
+			ResultSet resultSet = statement.executeQuery();
+			if (resultSet.next()) {
+				userInfo = new ParentUserInfo(
+						resultSet.getString(1),
+						resultSet.getString(2),
+						resultSet.getString(3)
+				);
+			}
+			statement.close();
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
 		}
-		statement.close();
-		return password;
+		return userInfo;
 	}
 
 	public static List<ChildUserInfo> getChildUserInfoForParent(String parentName) throws SQLException {
-		PreparedStatement statement = mainDBConnection.prepareStatement("select UserName, CashCurrency, GameCurrency, Gender, MultiplayerEnabled from ChildUsers where ParentUserName = ?");
+		PreparedStatement statement = mainDBConnection.prepareStatement("select UserName, UserID, CashCurrency, GameCurrency, Gender, MultiplayerEnabled from ChildUsers where ParentUserName = ?");
 		statement.setString(1, parentName);
 		ResultSet resultSet = statement.executeQuery();
 		List<ChildUserInfo> children = new ArrayList<>();
 		while (resultSet.next()) {
 			children.add(new ChildUserInfo(
 					resultSet.getString(1),
+					resultSet.getString(2),
+					resultSet.getInt(4),
 					resultSet.getInt(3),
-					resultSet.getInt(2),
-					Gender.fromValue(resultSet.getInt(4)),
-					resultSet.getBoolean(5),
+					Gender.fromValue(resultSet.getInt(5)),
+					resultSet.getBoolean(6),
 					parentName
 			));
 		}
 		return children;
 	}
 
-	public static ChildUserInfo getChildUserInfo(String userName) throws SQLException {
-		PreparedStatement statement = mainDBConnection.prepareStatement("select CashCurrency, GameCurrency, Gender, MultiplayerEnabled, ParentUserName from ChildUsers where UserName = ?");
-		statement.setString(1, userName);
-		ResultSet resultSet = statement.executeQuery();
+	public static ChildUserInfo getChildUserInfo(String key) {
 		ChildUserInfo userInfo = null;
-		if (resultSet.next()) {
-			userInfo = new ChildUserInfo(
-					userName,
-					resultSet.getInt(2), // CashCurrency
-					resultSet.getInt(1), // GameCurrency
-					Gender.fromValue(resultSet.getInt(3)), // GenderID
-					resultSet.getBoolean(4), // MultiplayEnabled
-					resultSet.getString(5) // ParentUserName
-			);
+		try {
+			PreparedStatement statement = mainDBConnection.prepareStatement("select UserName, UserID, CashCurrency, GameCurrency, Gender, MultiplayerEnabled, ParentUserName from ChildUsers where (UserName = ?) or (UserID = ?)");
+			statement.setString(1, key);
+			statement.setString(2, key);
+			ResultSet resultSet = statement.executeQuery();
+			if (resultSet.next()) {
+				userInfo = new ChildUserInfo(
+						resultSet.getString(1),
+						resultSet.getString(2),
+						resultSet.getInt(4), // CashCurrency
+						resultSet.getInt(3), // GameCurrency
+						Gender.fromValue(resultSet.getInt(5)), // GenderID
+						resultSet.getBoolean(6), // MultiplayEnabled
+						resultSet.getString(7) // ParentUserName
+				);
+			}
+			statement.close();
+		} catch (SQLException throwables) {
+			throwables.printStackTrace();
 		}
-		statement.close();
 		return userInfo;
 	}
 
@@ -185,27 +211,46 @@ public class MainDBAccessor {
 		return isUnique;
 	}
 
-	public static SSOTokenInfo getSSOParentTokenInfo(String token) throws SQLException {
+	public static SSOParentTokenInfo getSSOParentTokenInfo(String token) throws SQLException {
 		updateSSOTokens();
+		SSOParentTokenInfo parentTokenInfo = null;
 		PreparedStatement statement = mainDBConnection.prepareStatement("select Expired, ExpiredByLogin, UserName from ActiveParentTokens where Token = ?");
-		return getSSOTokenInfo(token, statement);
-	}
-
-	public static SSOTokenInfo getSSOChildTokenInfo(String token) throws SQLException {
-		updateSSOTokens();
-		PreparedStatement statement = mainDBConnection.prepareStatement("select Expired, ExpiredByLogin, UserName from ActiveChildTokens where Token = ?");
-		return getSSOTokenInfo(token, statement);
-	}
-
-	private static SSOTokenInfo getSSOTokenInfo(String token, PreparedStatement statement) throws SQLException {
 		statement.setString(1, token);
 		ResultSet resultSet = statement.executeQuery();
-		SSOTokenInfo result = null;
 		if (resultSet.next()) {
-			result = new SSOTokenInfo(token, resultSet.getBoolean(1), resultSet.getBoolean(2), resultSet.getString(3));
+			parentTokenInfo = new SSOParentTokenInfo(
+					token,
+					resultSet.getBoolean(1),
+					resultSet.getBoolean(2),
+					resultSet.getString(3)
+			);
 		}
-		statement.close();
-		return result;
+		return parentTokenInfo;
+	}
+
+	public static SSOChildTokenInfo getSSOChildTokenInfo(String token) throws SQLException {
+		updateSSOTokens();
+		SSOChildTokenInfo childTokenInfo = null;
+		PreparedStatement statement = mainDBConnection.prepareStatement("select Expired, ExpiredByLogin, UserName from ActiveChildTokens where Token = ?");
+		statement.setString(1, token);
+		ResultSet resultSet = statement.executeQuery();
+		if (resultSet.next()) {
+			childTokenInfo = new SSOChildTokenInfo(
+					token,
+					resultSet.getBoolean(1),
+					resultSet.getBoolean(2),
+					resultSet.getString(3)
+			);
+		}
+		return childTokenInfo;
+	}
+
+	public static SSOTokenInfo getSSOTokenInfo(String token) throws SQLException {
+		SSOTokenInfo tokenInfo = getSSOChildTokenInfo(token);
+		if(tokenInfo != null){
+			return tokenInfo;
+		}
+		return getSSOParentTokenInfo(token);
 	}
 
 	public static void addSSOParentToken(String token, String userName) throws SQLException {
@@ -216,7 +261,7 @@ public class MainDBAccessor {
 
 	public static void addSSOChildToken(String token, String userName) throws SQLException {
 		updateSSOTokens();
-		PreparedStatement statement = mainDBConnection.prepareStatement("insert into ActiveChildTokens (Token, UserName, LastRefresh, ExpiredByLogin, ExpiredSince, ExpiredByLogin) values(?, ?, ?, 0, 0, 0)");
+		PreparedStatement statement = mainDBConnection.prepareStatement("insert into ActiveChildTokens (Token, UserName, LastRefresh, Expired, ExpiredSince, ExpiredByLogin) values(?, ?, ?, 0, 0, 0)");
 		addSSOToken(token, userName, statement);
 	}
 

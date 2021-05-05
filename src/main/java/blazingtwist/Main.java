@@ -39,8 +39,7 @@ public class Main {
 		//System.out.println(MainDBAccessor.getParentUserPassword("J+EmTnjYU1aAMJt4MuAk"));
 
 		if (false) {
-			String enc = TripleDes.encrypt("<ParentLoginData><UserName>BlazingTwist</UserName><Password>JDJhJDEyJGQuNnN1ZFFHMzd6SnhyWUFBQ01DcS5uY25OejlvajJWc01HbDM0TlZOZ1F1bDV2TGVjTm0y</Password></ParentLoginData>");
-			System.out.println(enc);
+			System.out.println(MainDBAccessor.buildGUID("TestUser"));
 			return;
 		}
 

@@ -6,7 +6,7 @@
 
     <xsi:complexType name="PairData">
         <xsi:sequence>
-            <xsi:element maxOccurs="unbounded" minOccurs="1" name="Pair" type="Pair">
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="Pair" type="Pair">
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="pairs"/>

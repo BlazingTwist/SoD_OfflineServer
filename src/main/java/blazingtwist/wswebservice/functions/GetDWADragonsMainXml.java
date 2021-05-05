@@ -10,7 +10,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class GetDWADragonsMainXml extends WebServiceFunction {
-	public static final boolean provideLocalUrls = true;
+	public static final boolean provideLocalUrls = false;
 
 	@WebServiceFunctionConstructor
 	public GetDWADragonsMainXml(String contextName) {

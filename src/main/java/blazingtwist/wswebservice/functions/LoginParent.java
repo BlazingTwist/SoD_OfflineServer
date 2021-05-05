@@ -1,6 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
+import blazingtwist.database.ParentUserInfo;
 import blazingtwist.wswebservice.SSOTokenManager;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -50,22 +51,20 @@ public class LoginParent extends WebServiceFunction {
 			 *   Conclusion: the only relevant data sent is the UserName and Password
 			 * */
 
-			String password = MainDBAccessor.getParentUserPassword(loginData.getUserName());
-			if (password == null) {
-				// TODO ? how does the client handle this?
+			ParentUserInfo parentUserInfo = MainDBAccessor.getParentUserInfo(loginData.getUserName());
+			if (parentUserInfo == null) {
 				ParentLoginInfo invalidUserNameResult = new ParentLoginInfo();
 				invalidUserNameResult.setUserName(loginData.getUserName());
 				invalidUserNameResult.setStatus(MembershipUserStatus.INVALID_USER_NAME);
-				respondXml(exchange, 404, invalidUserNameResult, "ParentLoginInfo", true);
+				respondXml(exchange, 200, invalidUserNameResult, "ParentLoginInfo", true);
 				return;
 			}
 
-			if (!password.equals(loginData.getPassword())) {
-				// TODO ? how does the client handle this?
+			if (!parentUserInfo.password.equals(loginData.getPassword())) {
 				ParentLoginInfo invalidPasswordResult = new ParentLoginInfo();
 				invalidPasswordResult.setUserName(loginData.getUserName());
 				invalidPasswordResult.setStatus(MembershipUserStatus.INVALID_PASSWORD);
-				respondXml(exchange, 401, invalidPasswordResult, "ParentLoginInfo", true);
+				respondXml(exchange, 200, invalidPasswordResult, "ParentLoginInfo", true);
 				return;
 			}
 
@@ -81,12 +80,12 @@ public class LoginParent extends WebServiceFunction {
 			 *     Status
 			 * */
 
-			String ssoToken = SSOTokenManager.generateParentToken(loginData.getUserName());
+			String ssoToken = SSOTokenManager.generateParentToken(parentUserInfo.userName);
 
 			ParentLoginInfo result = new ParentLoginInfo();
-			result.setUserName(loginData.getUserName());
+			result.setUserName(parentUserInfo.userName);
 			result.setApiToken(ssoToken);
-			result.setUserID(loginData.getUserName());
+			result.setUserID(parentUserInfo.userID);
 			result.setStatus(MembershipUserStatus.SUCCESS);
 
 			respondXml(exchange, 200, result, "ParentLoginInfo", true);

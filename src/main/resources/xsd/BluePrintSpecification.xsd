@@ -4,7 +4,6 @@
 
     <xsi:include schemaLocation="ItemRarity.xsd"/>
     <xsi:include schemaLocation="ItemTier.xsd"/>
-    <xsi:include schemaLocation="SpecificationType.xsd"/>
 
     <xsi:complexType name="BluePrintSpecification">
         <xsi:sequence>
@@ -12,13 +11,6 @@
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="bluePrintSpecID"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="BPIID" type="xsd:int">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="bluePrintItemID"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
@@ -54,13 +46,6 @@
                 <xsi:annotation>
                     <xsi:appinfo>
                         <jaxb:property name="quantity"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ST" type="SpecificationType">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="specificationType"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
