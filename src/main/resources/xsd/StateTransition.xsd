@@ -19,28 +19,14 @@
             <xsi:enumeration value="2">
                 <xsi:annotation>
                     <xsi:appinfo>
-                        <jaxb:typesafeEnumMember name="Completion"/>
+                        <jaxb:typesafeEnumMember name="Deletion"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:enumeration>
             <xsi:enumeration value="3">
                 <xsi:annotation>
                     <xsi:appinfo>
-                        <jaxb:typesafeEnumMember name="Deletion"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:enumeration>
-            <xsi:enumeration value="4">
-                <xsi:annotation>
-                    <xsi:appinfo>
                         <jaxb:typesafeEnumMember name="InitialState"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:enumeration>
-            <xsi:enumeration value="5">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:typesafeEnumMember name="Expired"/>
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:enumeration>

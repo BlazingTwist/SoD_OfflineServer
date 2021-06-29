@@ -38,7 +38,7 @@ public class GetAllRanks extends WebServiceFunction {
 
 		InputStream xmlStream = this.getClass().getClassLoader().getResourceAsStream("AllRankData.xml");
 		if(xmlStream == null){
-			System.err.println("Failed to load AllRankData.xml");
+			logger.error("Failed to load AllRankData.xml");
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
@@ -46,7 +46,7 @@ public class GetAllRanks extends WebServiceFunction {
 		try{
 			respond(exchange, 200, new String(xmlStream.readAllBytes(), StandardCharsets.UTF_8));
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Unexpected error in {}", this.getClass().getSimpleName(), e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

@@ -1,7 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.SSOTokenInfo;
+import blazingtwist.database.querydatatypes.tokeninfo.SSOTokenInfo;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
@@ -40,7 +40,7 @@ public class IsValidApiToken extends WebServiceFunction {
 			}
 			respondXml(exchange, 200, status, "ApiTokenStatus", false);
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.error("Unexpected SQL error in {}", this.getClass().getSimpleName(), throwables);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

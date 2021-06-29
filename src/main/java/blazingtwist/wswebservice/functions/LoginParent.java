@@ -1,7 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.ParentUserInfo;
+import blazingtwist.database.querydatatypes.userinfo.ParentUserInfo;
 import blazingtwist.wswebservice.SSOTokenManager;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -90,7 +90,7 @@ public class LoginParent extends WebServiceFunction {
 
 			respondXml(exchange, 200, result, "ParentLoginInfo", true);
 		} catch (JAXBException | SQLException e) {
-			e.printStackTrace();
+			logger.error("Unexpected error in {}", this.getClass().getSimpleName(), e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

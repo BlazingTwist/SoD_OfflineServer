@@ -45,7 +45,7 @@ public class RespondToChallenge extends WebServiceFunction {
 				body.get(PARAM_POINTS),
 				body.get(PARAM_POINTS_TYPE)
 		);
-		System.out.println("calculated sig: " + calculatedSignature);
+		logger.trace("calculated sig: {}", calculatedSignature);
 		if (!calculatedSignature.equalsIgnoreCase(body.get(PARAM_SIGNATURE))) {
 			respond(exchange, 500, ERROR_INVALID_SIGNATURE);
 			return;

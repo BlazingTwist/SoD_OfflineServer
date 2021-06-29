@@ -3,7 +3,6 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
     <xsi:include schemaLocation="AvatarDataPartOffset.xsd"/>
-    <xsi:include schemaLocation="AvatarPartAttribute.xsd"/>
 
     <xsd:complexType name="AvatarDataPart">
         <xsi:sequence>
@@ -29,13 +28,6 @@
                     </xsi:sequence>
                 </xsd:complexType>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="Attributes">
-                <xsd:complexType>
-                    <xsi:sequence>
-                        <xsi:element maxOccurs="unbounded" minOccurs="0" name="Attribute" type="AvatarPartAttribute"/>
-                    </xsi:sequence>
-                </xsd:complexType>
-            </xsi:element>
             <xsi:element maxOccurs="1" minOccurs="0" name="Uiid" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -43,6 +35,10 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PrimaryColor" type="xsi:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="SecondaryColor" type="xsi:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="LogoColor" type="xsi:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="DecalTex" type="xsi:string"/>
         </xsi:sequence>
     </xsd:complexType>
 </xsi:schema>

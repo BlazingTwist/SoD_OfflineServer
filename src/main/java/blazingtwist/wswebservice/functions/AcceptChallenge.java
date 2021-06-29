@@ -43,7 +43,7 @@ public class AcceptChallenge extends WebServiceFunction {
 				body.get(PARAM_CHALLENGE_ID),
 				body.get(PARAM_MESSAGE_ID)
 		);
-		System.out.println("calculated sig: " + calculatedSignature);
+		logger.trace("calculated sig: {}", calculatedSignature);
 		if (!calculatedSignature.equalsIgnoreCase(body.get(PARAM_SIGNATURE))) {
 			respond(exchange, 500, ERROR_INVALID_SIGNATURE);
 			return;

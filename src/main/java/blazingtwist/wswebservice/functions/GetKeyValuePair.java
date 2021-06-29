@@ -20,7 +20,7 @@ public class GetKeyValuePair extends WebServiceFunction {
 
 		InputStream xmlStream = this.getClass().getClassLoader().getResourceAsStream("TestPairData.xml");
 		if (xmlStream == null) {
-			System.err.println("failed to load pair data!");
+			logger.error("Failed to load TestPairData.xml!");
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
@@ -28,7 +28,7 @@ public class GetKeyValuePair extends WebServiceFunction {
 		try {
 			respond(exchange, 200, new String(xmlStream.readAllBytes(), StandardCharsets.UTF_8));
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Unexpected error in {}", this.getClass().getSimpleName(), e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

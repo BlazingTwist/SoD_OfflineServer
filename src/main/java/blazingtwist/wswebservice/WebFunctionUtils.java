@@ -1,5 +1,6 @@
 package blazingtwist.wswebservice;
 
+import blazingtwist.logback.LogbackLoggerProvider;
 import blazingtwist.crypto.TripleDes;
 import java.io.StringReader;
 import java.io.StringWriter;
@@ -14,8 +15,10 @@ import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 import javax.xml.namespace.QName;
 import javax.xml.transform.stream.StreamSource;
+import org.slf4j.Logger;
 
 public class WebFunctionUtils {
+	private static final Logger logger = LogbackLoggerProvider.getLogger(WebFunctionUtils.class);
 	public static final Pattern paramPattern = Pattern.compile("^(.*?)=(.*)$");
 
 	public static Map<String, String> readUrlMap(String string) {
@@ -37,7 +40,7 @@ public class WebFunctionUtils {
 
 		for (K key : keys) {
 			if (!map.containsKey(key)) {
-				System.out.println("missing key: " + key);
+				logger.info("missing key: {}", key);
 				return false;
 			}
 		}

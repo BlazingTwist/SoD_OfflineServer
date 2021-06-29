@@ -4,6 +4,7 @@ package blazingtwist.crypto;
  * Credits: https://gist.github.com/riversun/6e15306cd6e3b1b37687a0e5cec1cef1
  */
 
+import blazingtwist.logback.LogbackLoggerProvider;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -11,8 +12,11 @@ import java.util.Arrays;
 import java.util.Base64;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
+import org.slf4j.Logger;
 
 public class TripleDes {
+	private static final Logger logger = LogbackLoggerProvider.getLogger(TripleDes.class);
+
 	private static final String CRYPT_ALGORITHM = "DESede";
 	private static final String PADDING = "DESede/ECB/PKCS5Padding";
 
@@ -26,7 +30,7 @@ public class TripleDes {
 	 */
 	public static final String KEY_ASCII = "C92EC1AA-54CD-4D0C-A8D5-403FCCF1C0BD";
 
-	private static byte[] getKeyHash() throws NoSuchAlgorithmException {
+	public static byte[] getKeyHash() throws NoSuchAlgorithmException {
 		MessageDigest md5 = MessageDigest.getInstance("MD5");
 		md5.update(KEY.getBytes(StandardCharsets.UTF_16LE));
 		byte[] hash = md5.digest();
@@ -53,7 +57,7 @@ public class TripleDes {
 
 			return new String(decryptBytes, StandardCharsets.UTF_16LE);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Unexpected TripleDes exception", e);
 			return null;
 		}
 	}
@@ -71,7 +75,7 @@ public class TripleDes {
 
 			return new String(Base64.getEncoder().encode(encryptBytes));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Unexpected TripleDes exception", e);
 			return null;
 		}
 	}
@@ -103,7 +107,7 @@ public class TripleDes {
 
 			return new String(decryptBytes, StandardCharsets.UTF_8);
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Unexpected TripleDes exception", e);
 			return null;
 		}
 	}
@@ -121,7 +125,7 @@ public class TripleDes {
 
 			return new String(Base64.getEncoder().encode(encryptBytes));
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.error("Unexpected TripleDes exception", e);
 			return null;
 		}
 	}

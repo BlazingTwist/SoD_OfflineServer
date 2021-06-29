@@ -3,7 +3,7 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
     <xsi:include schemaLocation="Status.xsd"/>
-    <xsi:include schemaLocation="ItemStat.xsd"/>
+    <xsi:include schemaLocation="ItemStoreStat.xsd"/>
 
     <xsi:complexType name="RollUserItemResponse">
         <xsi:sequence>
@@ -14,13 +14,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="unbounded" minOccurs="1" name="IS" type="ItemStat">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="itemStats"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+            <xsi:element maxOccurs="unbounded" minOccurs="1" name="ItemStats" type="ItemStoreStat"/>
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

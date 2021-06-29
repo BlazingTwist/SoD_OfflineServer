@@ -1,5 +1,6 @@
 package blazingtwist.wswebservice;
 
+import blazingtwist.logback.LogbackLoggerProvider;
 import generated.SubscriptionInfo;
 import generated.UserSubscriptionInfo;
 import java.sql.Date;
@@ -9,15 +10,18 @@ import java.util.GregorianCalendar;
 import javax.xml.datatype.DatatypeConfigurationException;
 import javax.xml.datatype.DatatypeFactory;
 import javax.xml.datatype.XMLGregorianCalendar;
+import org.slf4j.Logger;
 
 public class WebDataUtils {
+	private static final Logger logger = LogbackLoggerProvider.getLogger(WebDataUtils.class);
+
 	private static XMLGregorianCalendar getNextYearDate() {
 		GregorianCalendar calendar = new GregorianCalendar();
 		calendar.setTime(Date.from(Instant.now().plus(365, ChronoUnit.DAYS)));
 		try {
 			return DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
 		} catch (DatatypeConfigurationException e) {
-			e.printStackTrace();
+			logger.error("Error during getNextYearDate", e);
 			return null;
 		}
 	}
@@ -48,7 +52,7 @@ public class WebDataUtils {
 			calendar.setTime(Date.from(instant));
 			return DatatypeFactory.newInstance().newXMLGregorianCalendar(calendar);
 		} catch (DatatypeConfigurationException e) {
-			e.printStackTrace();
+			logger.error("Error during getXmlCalendar", e);
 			return null;
 		}
 	}

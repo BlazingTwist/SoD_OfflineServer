@@ -1,7 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.SSOParentTokenInfo;
+import blazingtwist.database.querydatatypes.tokeninfo.SSOParentTokenInfo;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
@@ -43,7 +43,7 @@ public class GetUserInfoByApiToken extends WebServiceFunction {
 		try {
 			parentTokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_API_TOKEN));
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.error("getSSOParentTokenInfo threw exception", throwables);
 		}
 
 		UserInfo result = new UserInfo();

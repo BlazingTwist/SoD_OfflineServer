@@ -69,6 +69,13 @@
     </build>
 
     <dependencies>
+        <!-- Logging -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.3.0-alpha5</version>
+        </dependency>
+
         <!-- Crypto -->
         <dependency>
             <groupId>at.favre.lib</groupId>

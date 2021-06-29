@@ -1,13 +1,17 @@
 package blazingtwist.config;
 
+import blazingtwist.logback.LogbackLoggerProvider;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.MapperFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.typesafe.config.Config;
 import com.typesafe.config.ConfigFactory;
 import com.typesafe.config.ConfigRenderOptions;
+import org.slf4j.Logger;
 
 public class ConfigUtils {
+	private static final Logger logger = LogbackLoggerProvider.getLogger(ConfigUtils.class);
+
 	public static ObjectMapper createDefaultMapper(){
 		return new ObjectMapper()
 				.enable(MapperFeature.ACCEPT_CASE_INSENSITIVE_VALUES,
@@ -43,14 +47,13 @@ public class ConfigUtils {
 
 	private static <T> T loadConfigToClass(Class<T> clazz, Config config) {
 		String configJson = config.root().render(ConfigRenderOptions.concise());
-		System.out.println(configJson);
+		logger.debug(configJson);
 		ObjectMapper mapper = createDefaultMapper();
 
 		try {
 			return mapper.readValue(configJson, clazz);
 		} catch (JsonProcessingException e) {
-			System.err.println("Failed to parse configFile!");
-			e.printStackTrace();
+			logger.error("Failed to parse configFile!", e);
 			return null;
 		}
 	}

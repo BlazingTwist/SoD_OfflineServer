@@ -1,9 +1,9 @@
 package blazingtwist.wswebservice.functions;
 
-import blazingtwist.database.ChildUserInfo;
+import blazingtwist.database.querydatatypes.userinfo.ChildUserInfo;
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.ParentUserInfo;
-import blazingtwist.database.SSOTokenInfo;
+import blazingtwist.database.querydatatypes.userinfo.ParentUserInfo;
+import blazingtwist.database.querydatatypes.tokeninfo.SSOTokenInfo;
 import blazingtwist.wswebservice.WebDataUtils;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -31,7 +31,7 @@ public class GetAllActivePetsByuserId extends WebServiceFunction {
 
 	@Override
 	public void handle(HttpExchange exchange, Map<String, String> params, Map<String, String> body) {
-		if(!WebFunctionUtils.checkKeysPresent(body, PARAM_API_KEY, PARAM_API_TOKEN, PARAM_USER_ID)){
+		if (!WebFunctionUtils.checkKeysPresent(body, PARAM_API_KEY, PARAM_API_TOKEN, PARAM_USER_ID)) {
 			respond(exchange, 400, INVALID_BODY);
 			return;
 		}
@@ -40,54 +40,55 @@ public class GetAllActivePetsByuserId extends WebServiceFunction {
 		try {
 			tokenInfo = MainDBAccessor.getSSOTokenInfo(body.get(PARAM_API_TOKEN));
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.warn("caught error of getSSOTokenInfo", throwables);
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
 
-		if(tokenInfo == null || tokenInfo.getExpired()){
+		if (tokenInfo == null || tokenInfo.getExpired()) {
 			respond(exchange, 401, "Invalid token!");
 			return;
 		}
 
 		ChildUserInfo userInfo = MainDBAccessor.getChildUserInfo(body.get(PARAM_USER_ID));
-		if(userInfo == null){
+		if (userInfo == null) {
 			respond(exchange, 400, "UserID not found!");
 			return;
 		}
 
 		ParentUserInfo tokenParentUserInfo = tokenInfo.getUserInfo().getParentUserInfo();
 		ParentUserInfo childParentUserInfo = userInfo.parentUserInfo;
-		if(!tokenParentUserInfo.isSameParent(childParentUserInfo)){
-			System.err.println("Token user: " + tokenParentUserInfo.userName + " called method for child of parent: " + childParentUserInfo.userName);
+		if (!tokenParentUserInfo.isSameParent(childParentUserInfo)) {
+			logger.warn("Token user: {} called method for child of parent: {}",
+					tokenParentUserInfo.userName, childParentUserInfo.userName);
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
 
 		/*
-		* Notes: RaisedPetData
-		*   IsPetCreated - unused
-		*   validationmessage - unused
-		*   IsReleased - unused
-		*
-		*   RaisedPetID - TODO
-		*   EntityID - TODO
-		*   UserID - TODO
-		*   Name - TODO
-		*   PetTypeID - TODO
-		*   GrowthState - TODO
-		*   ImagePosition - TODO
-		*   Geometry - TODO
-		*   Texture - TODO
-		*   Gender - TODO
-		*   Accessories - TODO
-		*   Attributes - TODO
-		*   Colors - TODO
-		*   Skills - TODO
-		*   States - TODO
-		*   IsSelected - TODO
-		*   CreateDate - TODO
-		* */
+		 * Notes: RaisedPetData
+		 *   IsPetCreated - unused
+		 *   validationmessage - unused
+		 *   IsReleased - unused
+		 *
+		 *   RaisedPetID - TODO
+		 *   EntityID - TODO
+		 *   UserID - TODO
+		 *   Name - TODO
+		 *   PetTypeID - TODO
+		 *   GrowthState - TODO
+		 *   ImagePosition - TODO
+		 *   Geometry - TODO
+		 *   Texture - TODO
+		 *   Gender - TODO
+		 *   Accessories - TODO
+		 *   Attributes - TODO
+		 *   Colors - TODO
+		 *   Skills - TODO
+		 *   States - TODO
+		 *   IsSelected - TODO
+		 *   CreateDate - TODO
+		 * */
 
 		ListOfRaisedPetData petList = new ListOfRaisedPetData();
 

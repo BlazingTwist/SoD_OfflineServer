@@ -26,7 +26,7 @@ public class GetDWADragonsMainXml extends WebServiceFunction {
 			xmlStream = this.getClass().getClassLoader().getResourceAsStream("GameConfig.xml");
 		}
 		if(xmlStream == null){
-			System.err.println("Failed to load GameConfig.xml!");
+			logger.error("Failed to load GameConfig.xml");
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
@@ -35,7 +35,7 @@ public class GetDWADragonsMainXml extends WebServiceFunction {
 			String encryptedConfig = TripleDes.encryptAscii(new String(xmlStream.readAllBytes(), StandardCharsets.UTF_8));
 			respond(exchange, 200, encryptedConfig);
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.error("Unexpected error in {}", this.getClass().getSimpleName(), e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

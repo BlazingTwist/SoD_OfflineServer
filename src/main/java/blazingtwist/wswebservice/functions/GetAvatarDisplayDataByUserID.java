@@ -59,7 +59,7 @@ public class GetAvatarDisplayDataByUserID extends WebServiceFunction {
 			marshaller.marshal(buildResponse(), writer);
 			super.respond(exchange, 200, writer.toString());
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			logger.error("Unexpected error in {}", this.getClass().getSimpleName(), e);
 			super.respond(exchange, 500, "Exception while handling the request.");
 		}
 

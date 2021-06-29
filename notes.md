@@ -106,3 +106,8 @@
 
 ### Other
 * RegisterGuest (uses same end-point as RegisterParent)
+
+
+### client-side TODOs
+* implement new ItemData.ItemStats
+* replace ItemData.PossibleStats.ItemStatsID with enum value, rename to ItemStatType

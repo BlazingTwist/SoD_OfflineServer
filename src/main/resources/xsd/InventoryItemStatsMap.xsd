@@ -3,10 +3,11 @@
         xmlns:jaxb="http://java.sun.com/xml/ns/jaxb" jaxb:version="2.1">
 
     <xsi:include schemaLocation="ItemData.xsd"/>
-    <xsi:include schemaLocation="ItemStatsMap.xsd"/>
+    <xsi:include schemaLocation="ItemStoreStat.xsd"/>
 
     <xsi:complexType name="InventoryItemStatsMap">
         <xsi:sequence>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="CID" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -14,6 +15,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="ITM" type="ItemData">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -21,13 +23,9 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="ISM" type="ItemStatsMap">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="ItemStatsMap"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ItemStoreStats" type="ItemStoreStat"/>
+
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

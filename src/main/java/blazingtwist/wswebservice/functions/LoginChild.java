@@ -2,9 +2,9 @@ package blazingtwist.wswebservice.functions;
 
 import blazingtwist.crypto.MD5;
 import blazingtwist.crypto.TripleDes;
-import blazingtwist.database.ChildUserInfo;
+import blazingtwist.database.querydatatypes.userinfo.ChildUserInfo;
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.SSOParentTokenInfo;
+import blazingtwist.database.querydatatypes.tokeninfo.SSOParentTokenInfo;
 import blazingtwist.wswebservice.SSOTokenManager;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -46,7 +46,7 @@ public class LoginChild extends WebServiceFunction {
 		}
 
 		String childUserId = TripleDes.decrypt(body.get(PARAM_CHILD_USER_ID));
-		System.out.println("ChildUserID: " + childUserId);
+		logger.trace("ChildUserID: {}", childUserId);
 
 		try {
 			SSOParentTokenInfo ssoParentTokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_PARENT_API_TOKEN));
@@ -61,7 +61,8 @@ public class LoginChild extends WebServiceFunction {
 				return;
 			}
 			if (!childUserInfo.parentUserInfo.userName.equals(ssoParentTokenInfo.parentUserInfo.userName)) {
-				System.out.println("parent: " + ssoParentTokenInfo.parentUserInfo.userName + " tried logging into child: " + childUserId + " of parent: " + childUserInfo.parentUserInfo.userName);
+				logger.warn("parent: {} tried logging into child: {} of parent: {}",
+						ssoParentTokenInfo.parentUserInfo.userName, childUserId, childUserInfo.parentUserInfo.userName);
 				respond(exchange, 401, "Invalid ChildUserID");
 				return;
 			}
@@ -69,7 +70,7 @@ public class LoginChild extends WebServiceFunction {
 			String ssoToken = SSOTokenManager.generateChildToken(childUserInfo.userName);
 			respondEncryptedString(exchange, 200, ssoToken);
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.error("Unexpected SQL error in {}", this.getClass().getSimpleName(), throwables);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

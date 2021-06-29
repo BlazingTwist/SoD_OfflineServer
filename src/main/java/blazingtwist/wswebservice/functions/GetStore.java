@@ -1,7 +1,7 @@
 package blazingtwist.wswebservice.functions;
 
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.SSOTokenInfo;
+import blazingtwist.database.querydatatypes.tokeninfo.SSOTokenInfo;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
 import blazingtwist.wswebservice.WebServiceFunctionConstructor;
@@ -9,8 +9,6 @@ import com.sun.net.httpserver.HttpExchange;
 import generated.GetStoreRequest;
 import generated.GetStoreResponse;
 import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.sql.SQLException;
 import java.util.Map;
 import javax.xml.bind.JAXBException;
@@ -36,7 +34,7 @@ public class GetStore extends WebServiceFunction {
 		try {
 			tokenInfo = MainDBAccessor.getSSOTokenInfo(body.get(PARAM_API_TOKEN));
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.error("getSSOTokenInfo threw exception", throwables);
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
@@ -50,7 +48,7 @@ public class GetStore extends WebServiceFunction {
 		try {
 			request = WebFunctionUtils.unmarshalXml(body.get(PARAM_GET_STORE_REQUEST), GetStoreRequest.class);
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			logger.warn("Failed to parse getStoreRequest", e);
 			respond(exchange, 400, "Cannot parse getStoreRequest");
 			return;
 		}
@@ -69,23 +67,14 @@ public class GetStore extends WebServiceFunction {
 
 		GetStoreResponse response = new GetStoreResponse();
 		if (request != null && request.getStoreIDs().size() > 0) {
-			// TODO handle store request
+			try {
+				response.getStores().addAll(MainDBAccessor.getStoreData(request.getStoreIDs()));
+			} catch (SQLException | IOException throwables) {
+				logger.error("getStoreData threw exception", throwables);
+			}
 		}
+		respondXml(exchange, 200, response, "GetStoreResponse", false);
 
-		//respondXml(exchange, 200, response, "GetStoreResponse", false);
-
-		InputStream xmlStream = this.getClass().getClassLoader().getResourceAsStream("TestStoreResponse.xml");
-		if (xmlStream == null) {
-			System.err.println("Failed to load TestStoreResponse.xml!");
-			respond(exchange, 500, INTERNAL_ERROR);
-			return;
-		}
-
-		try {
-			respond(exchange, 200, new String(xmlStream.readAllBytes(), StandardCharsets.UTF_8));
-		} catch (IOException e) {
-			e.printStackTrace();
-			respond(exchange, 500, INTERNAL_ERROR);
-		}
+		// TODO remove TestStoreResponse.xml
 	}
 }

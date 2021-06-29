@@ -5,19 +5,19 @@
     <xsi:include schemaLocation="ItemState.xsd"/>
     <xsi:include schemaLocation="ItemRarity.xsd"/>
     <xsi:include schemaLocation="ItemPossibleStatsMap.xsd"/>
-    <xsi:include schemaLocation="ItemStatsMap.xsd"/>
-    <xsi:include schemaLocation="ItemSaleConfig.xsd"/>
+    <xsi:include schemaLocation="ItemStoreStat.xsd"/>
     <xsi:include schemaLocation="BluePrint.xsd"/>
-    <xsi:include schemaLocation="ItemAttribute.xsd"/>
     <xsi:include schemaLocation="ItemDataCategory.xsd"/>
-    <xsi:include schemaLocation="ItemDataRollover.xsd"/>
     <xsi:include schemaLocation="ItemDataRelationship.xsd"/>
     <xsi:include schemaLocation="ItemDataTexture.xsd"/>
-    <xsi:include schemaLocation="ItemAvailability.xsd"/>
+    <xsi:include schemaLocation="Gender.xsd"/>
+    <xsi:include schemaLocation="ItemFishModifier.xsd"/>
+    <xsi:include schemaLocation="RaisedPetStage.xsd"/>
+    <xsi:include schemaLocation="ItemDataDragonFood.xsd"/>
+    <xsi:include schemaLocation="ItemDataAvatarModifier.xsd"/>
 
     <xsi:complexType name="ItemData">
         <xsi:sequence>
-            <!-- TODO super jank, for farm items only, please remove -->
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="is" type="ItemState">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -26,7 +26,6 @@
                 </xsi:annotation>
             </xsi:element>
 
-            <!-- TODO default value is assume to be 'Common', please relocate that logic to the server instead -->
             <xsi:element maxOccurs="1" minOccurs="1" name="ir" type="ItemRarity">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -42,20 +41,10 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="ism" type="ItemStatsMap">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="itemStatsMap"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
-            <xsi:element maxOccurs="unbounded" minOccurs="0" name="iscs" type="ItemSaleConfig">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="itemSaleConfigs"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+
+            <xsi:element maxOccurs="1" minOccurs="0" name="StoreItemTier" type="ItemTier"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="ItemStoreStats" type="ItemStoreStat"/>
+
             <xsi:element maxOccurs="1" minOccurs="0" name="bp" type="BluePrint">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -63,6 +52,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="an" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -70,13 +60,11 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="unbounded" minOccurs="0" name="at" type="ItemAttribute">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="attribute"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+
+            <xsi:element maxOccurs="1" minOccurs="0" name="ActionDB" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="ActionDBImage" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="WeaponName" type="xsd:string"/>
+
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="c" type="ItemDataCategory">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -84,6 +72,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="ct" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -91,6 +80,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="ct2" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -98,6 +88,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="cp" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -105,6 +96,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="d" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -112,6 +104,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="icn" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -119,6 +112,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="im" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -126,6 +120,9 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
+            <xsi:element maxOccurs="1" minOccurs="0" name="IsParentItem" type="xsd:boolean"/>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="id" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -133,6 +130,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="itn" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -140,6 +138,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="itnp" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -147,13 +146,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="1" name="l" type="xsd:boolean">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="locked"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="0" name="g" type="xsd:string">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -161,13 +154,11 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="1" minOccurs="0" name="ro" type="ItemDataRollover">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="rollover"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+
+            <xsi:element maxOccurs="1" minOccurs="1" name="HasToggleWings" type="xsi:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PartBone2" type="xsi:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Gender" type="Gender"/>
+
             <xsi:element maxOccurs="1" minOccurs="0" name="rid" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -175,6 +166,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="r" type="ItemDataRelationship">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -182,6 +174,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="sf" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -189,6 +182,9 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
+            <xsi:element maxOccurs="1" minOccurs="0" name="SaleShardCount" type="xsd:int"/>
+
             <xsi:element maxOccurs="unbounded" minOccurs="1" name="t" type="ItemDataTexture">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -196,6 +192,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="u" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -203,13 +200,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
-            <xsi:element maxOccurs="unbounded" minOccurs="1" name="av" type="ItemAvailability">
-                <xsi:annotation>
-                    <xsi:appinfo>
-                        <jaxb:property name="availability"/>
-                    </xsi:appinfo>
-                </xsi:annotation>
-            </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="1" name="rtid" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -217,6 +208,7 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
             <xsi:element maxOccurs="1" minOccurs="0" name="p" type="xsd:int">
                 <xsi:annotation>
                     <xsi:appinfo>
@@ -224,6 +216,23 @@
                     </xsi:appinfo>
                 </xsi:annotation>
             </xsi:element>
+
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="FishModifiers" type="ItemFishModifier"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PetTypeID" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PetStage" type="RaisedPetStage"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="PetToyType" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="IsNew" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="GlowColor" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="EffectDuration" type="xsd:float"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="Movie" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="1" name="Is2D" type="xsd:boolean"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="StorePreviewImage" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="StorePreviewScale" type="xsd:string"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="StableNestCount" type="xsd:int"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="HappinessDecreaseModifier" type="xsd:float"/>
+            <xsi:element maxOccurs="1" minOccurs="0" name="DragonFood" type="ItemDataDragonFood"/>
+            <xsi:element maxOccurs="unbounded" minOccurs="0" name="AvatarModifiers" type="ItemDataAvatarModifier"/>
+
         </xsi:sequence>
     </xsi:complexType>
 </xsi:schema>

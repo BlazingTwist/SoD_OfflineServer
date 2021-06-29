@@ -1,5 +1,6 @@
 package blazingtwist.wswebservice;
 
+import blazingtwist.logback.LogbackLoggerProvider;
 import blazingtwist.crypto.TripleDes;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -10,8 +11,11 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Map;
 import javax.xml.bind.JAXBException;
+import org.slf4j.Logger;
 
 public abstract class WebServiceFunction implements HttpHandler {
+	protected static final Logger logger = LogbackLoggerProvider.getLogger(WebServiceFunction.class);
+
 	public static final String CONTENT_LENGTH = "Content-Length";
 	public static final String CONTENT_TYPE = "Content-Type";
 	public static final String WWW_FORM_URL_ENCODED = "application/x-www-form-urlencoded";
@@ -39,9 +43,9 @@ public abstract class WebServiceFunction implements HttpHandler {
 		if (uriSplit.length == 2) {
 			params = WebFunctionUtils.readUrlMap(uriSplit[1].replace('\r', ' '));
 
-			System.out.println("Called " + contextName + " with params: ");
+			logger.trace("Called {} with params: ", contextName);
 			for (Map.Entry<String, String> paramEntry : params.entrySet()) {
-				System.out.println("\t" + paramEntry.getKey() + " = " + paramEntry.getValue());
+				logger.trace("\t{} = {}", paramEntry.getKey(), paramEntry.getValue());
 			}
 		}
 
@@ -56,9 +60,9 @@ public abstract class WebServiceFunction implements HttpHandler {
 				dataString = dataString.replace('\r', ' ');
 				body = WebFunctionUtils.readUrlMap(dataString);
 
-				System.out.println("Called " + contextName + " with body: ");
+				logger.trace("Called {} with body: ", contextName);
 				for (Map.Entry<String, String> bodyEntry : body.entrySet()) {
-					System.out.println("\t" + bodyEntry.getKey() + " = " + bodyEntry.getValue());
+					logger.trace("\t{} = {}", bodyEntry.getKey(), bodyEntry.getValue());
 				}
 			}
 		}
@@ -66,8 +70,7 @@ public abstract class WebServiceFunction implements HttpHandler {
 		try {
 			this.handle(exchange, params, body);
 		} catch (Exception e) {
-			System.err.println("unhandled exception: " + e.toString());
-			e.printStackTrace();
+			logger.error("unhandled exception!", e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}
@@ -76,7 +79,7 @@ public abstract class WebServiceFunction implements HttpHandler {
 
 	public void respond(HttpExchange exchange, int responseCode, String response) {
 		try {
-			System.out.println("responding with: " + response);
+			logger.trace("responding with: " + response);
 
 			exchange.getResponseHeaders().add("Content-Type", "text/xml; charset=utf-8");
 			exchange.sendResponseHeaders(responseCode, response.length());
@@ -85,30 +88,30 @@ public abstract class WebServiceFunction implements HttpHandler {
 			outputStream.flush();
 			outputStream.close();
 		} catch (IOException e) {
-			System.err.println("unable to send response! context: " + contextName);
-			e.printStackTrace();
+			logger.error("Unable to send response! context: {}", contextName, e);
 		}
 	}
 
 	public <T> void respondXml(HttpExchange exchange, int responseCode, T response, String rootName, boolean encrypt) {
 		try {
+			@SuppressWarnings("unchecked")
 			String resultString = WebFunctionUtils.marshalXml(response, rootName, (Class<T>) response.getClass(), encrypt);
 			if (encrypt) {
 				resultString = WebFunctionUtils.marshalXml(TripleDes.encrypt(resultString), "string", String.class, false);
 			}
 			respond(exchange, responseCode, resultString);
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			logger.error("Error during respondXml", e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}
 
-	public void respondEncryptedString(HttpExchange exchange, int responseCode, String response){
+	public void respondEncryptedString(HttpExchange exchange, int responseCode, String response) {
 		try {
 			String resultString = WebFunctionUtils.marshalXml(TripleDes.encrypt(response), "string", String.class, false);
 			respond(exchange, responseCode, resultString);
 		} catch (JAXBException e) {
-			e.printStackTrace();
+			logger.error("Error during respondEncryptedString", e);
 			respond(exchange, 500, INTERNAL_ERROR);
 		}
 	}

@@ -1,9 +1,9 @@
 package blazingtwist.wswebservice.functions;
 
-import blazingtwist.database.ChildUserInfo;
+import blazingtwist.database.querydatatypes.userinfo.ChildUserInfo;
 import blazingtwist.database.MainDBAccessor;
-import blazingtwist.database.ParentUserInfo;
-import blazingtwist.database.SSOParentTokenInfo;
+import blazingtwist.database.querydatatypes.userinfo.ParentUserInfo;
+import blazingtwist.database.querydatatypes.tokeninfo.SSOParentTokenInfo;
 import blazingtwist.wswebservice.WebDataUtils;
 import blazingtwist.wswebservice.WebFunctionUtils;
 import blazingtwist.wswebservice.WebServiceFunction;
@@ -13,7 +13,6 @@ import generated.AvatarData;
 import generated.AvatarDataPart;
 import generated.AvatarDataPartOffset;
 import generated.AvatarDisplayData;
-import generated.AvatarPartAttribute;
 import generated.ListOfUserProfileData;
 import generated.UserAchievementInfo;
 import generated.UserInfo;
@@ -70,14 +69,6 @@ public class GetDetailedChildList extends WebServiceFunction {
 			return this;
 		}
 
-		public AvatarDataPartBuilder withAttribute(String key, String value) {
-			AvatarPartAttribute attribute = new AvatarPartAttribute();
-			attribute.setKey(key);
-			attribute.setValue(value);
-			dataPart.getAttributes().add(attribute);
-			return this;
-		}
-
 		public AvatarDataPart build(int uiid) {
 			dataPart.setUserInventoryID(uiid);
 			return dataPart;
@@ -93,6 +84,9 @@ public class GetDetailedChildList extends WebServiceFunction {
 		avatarData.setIsSuggestedAvatarName(false);
 		avatarData.setDisplayName(dbInfo.userName);
 		avatarData.setGender(dbInfo.gender);
+		avatarData.setIsHatVisible(true);
+		avatarData.setIsWingVisible(false);
+		avatarData.setLastEquippedFlightSuit(16192);
 
 		// TODO generate part-list
 		avatarData.getPart().add(new AvatarDataPartBuilder("Eyes").withGeometries("__EMPTY__").withTextures("__EMPTY__").build(-1));
@@ -117,8 +111,6 @@ public class GetDetailedChildList extends WebServiceFunction {
 		avatarData.getPart().add(new AvatarDataPartBuilder("Hat")
 				.withGeometries("PfDWAvHatFPffyHrnPffyHlmt.unity3d/PfDWAvHatFPffyHrnPffyHlmt")
 				.withTextures("DWAvatarHatFPffyHrnPffyHlmt01.unity3d/DWAvHatPffyHrnPffyHlmtArcticTex")
-				.withAttribute("Happiness", "0.05")
-				.withAttribute("FlightSpeed", "0.01")
 				.build(896674313));
 		avatarData.getPart().add(new AvatarDataPartBuilder("Head")
 				.withOffset(0.784313738f, 0.5411765f, 0.3764706f)
@@ -136,8 +128,6 @@ public class GetDetailedChildList extends WebServiceFunction {
 		avatarData.getPart().add(new AvatarDataPartBuilder("Hidden")
 				.withGeometries("__EMPTY__")
 				.withTextures("__EMPTY__")
-				.withAttribute("Hat", "True")
-				.withAttribute("Wing", "False")
 				.build());
 		avatarData.getPart().add(new AvatarDataPartBuilder("Legs")
 				.withGeometries("PfDWAvLegsFArmorArcticLegendary.unity3d/PfDWAvLegsFArmorArcticLegendary")
@@ -172,14 +162,10 @@ public class GetDetailedChildList extends WebServiceFunction {
 		avatarData.getPart().add(new AvatarDataPartBuilder("Weapon")
 				.withGeometries("pfdwcrossbowbonestormer/PfDWCrossbowBonestormer")
 				.withTextures("__EMPTY__")
-				.withAttribute("WeaponName", "PfSTWCrossbowWild")
 				.build(876811703));
 		avatarData.getPart().add(new AvatarDataPartBuilder("Wing")
 				.withGeometries("NULL")
 				.withTextures("__EMPTY__")
-				.withAttribute("LEFS", "16192")
-				.withAttribute("_PrimaryColor", "color/")
-				.withAttribute("_SecondaryColor", "color/")
 				.build(896677911));
 		avatarData.getPart().add(new AvatarDataPartBuilder("WristBand")
 				.withGeometries("PfDWAvWristbandFLGroncicle.unity3d/PfDWAvWristbandFLGroncicle",
@@ -270,7 +256,7 @@ public class GetDetailedChildList extends WebServiceFunction {
 		try {
 			parentTokenInfo = MainDBAccessor.getSSOParentTokenInfo(body.get(PARAM_PARENT_API_TOKEN));
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.error("getSSOParentTokenInfo threw exception", throwables);
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
@@ -285,14 +271,14 @@ public class GetDetailedChildList extends WebServiceFunction {
 		try {
 			dbChildren = MainDBAccessor.getChildUserInfoForParent(parentTokenInfo.parentUserInfo.userName);
 		} catch (SQLException throwables) {
-			throwables.printStackTrace();
+			logger.error("getChildUserInfoForParent threw exception", throwables);
 			respond(exchange, 500, INTERNAL_ERROR);
 			return;
 		}
 
-		System.out.println("checking child list...");
+		logger.trace("checking child list...");
 		for (ChildUserInfo dbChild : dbChildren) {
-			System.out.println("found child: " + dbChild.userName);
+			logger.trace("found child: {}", dbChild.userName);
 			childList.getUserProfileDisplayData().add(getUserProfileData(parentTokenInfo.parentUserInfo, dbChild));
 		}
 

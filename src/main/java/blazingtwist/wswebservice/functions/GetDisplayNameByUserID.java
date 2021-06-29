@@ -26,7 +26,7 @@ public class GetDisplayNameByUserID extends WebServiceFunction {
 					"test");
 
 			marshaller.marshal(element, writer);
-			System.err.println("String: " + writer.toString());
+			logger.info("String: {}", writer.toString());
 		} catch (JAXBException e) {
 			e.printStackTrace();
 		}*/
